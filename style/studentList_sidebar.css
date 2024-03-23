@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid orangered; */
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue';
+  background-color: #fefefe;
+  margin: 1rem 2rem;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #fba834;
+}
+
+.active{
+  background-color: #fba834;
+}
+
+
+.nav-items li {
+  list-style: none;
+  padding: 1.8rem 1rem;
+  color: #fefefe;
+}
+
+i {
+  padding-right: 1rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+
+.header img {
+  width: 10dvw;
+  height: 70px;
+  object-fit: contain;
+}
+
+.current-page-name {
+  height: 100%;
+  margin: auto 0;
+  padding-right: 1rem;
+}
+
+.exact-location {
+  color: #fba834;
+}
+
+.vertical-nav-bar {
+  width: 10dvw;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-items {
+  cursor: pointer;
+  background-color: #201658;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-items li a {
+  font-size: 14px;
+  color: #fefefe;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-items li i {
+  font-size: 24px;
+  color: #fefefe;
+}
+
+
+
+
+.nav-items li:nth-child(2) i,
+.nav-items li:nth-child(4) i {
+  padding-right: 1.5rem;
+}
+
+.vertical-nav-bar.shrink {
+  width: 4dvw;
+}
+
+.vertical-nav-bar.shrink .nav-items li a {
+  display: none;
+}
+
+.vertical-nav-bar.shrink .nav-items li i {
+  display: block;
+}
+
+.vertical-nav-bar.shrink .nav-items {
+  border-radius: 50px;
+}
+
+.header.shrink {
+  width: 75%;
+}
