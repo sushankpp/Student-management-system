@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="internals/images/st-lawrence-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <!-- <link rel="stylesheet" href="style/loadingScreen.css">  -->
+    <link rel="stylesheet" href="style/loadingScreen.css">
     <link rel="stylesheet" href="style/studentList_sidebar.css">
     <link rel="stylesheet" href="style/student_list.css">
     <link rel="stylesheet" href="style/dashboard.css">
@@ -41,16 +41,19 @@
 
             <div class=" vertical-nav-bar shrink">
                 <ul class="nav-items shrink">
-                    <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
-                    </li>
-                    <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
-                    </li>
-                    <li><a href="teacherList.php"><i
-                                class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
-                    <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
-                    <li><i class="fa-regular fa-messages"></i><a href=""><span>Notices</span></a></li>
-                    <li><a href=""><i class="fa-solid fa-money-check-dollar"></i><span>Semester Fee</span></a></li>
-                    <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                    <ul class="nav-items ">
+                        <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
+                        </li>
+                        <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
+                        </li>
+                        <li><a href="teacherList.php"><i
+                                    class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
+                        <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
+                        <li><a href=""><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
+                        <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
+                                    Fee</span></a></li>
+                        <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                    </ul>
                 </ul>
             </div>
 
@@ -166,7 +169,7 @@
                         <h2>Notices</h2>
                         <div class="notice-preview">
                             <h3 class="date">Saturday</h3>
-                            <p class="content">Upcoming sunday will be a special day for college because of college
+                            <p class="text-content">Upcoming sunday will be a special day for college because of college
                                 anniversary</p>
                             <div class="bottom">
 
@@ -177,7 +180,7 @@
 
                         <div class="notice-preview">
                             <h3 class="date">Saturday</h3>
-                            <p class="content">Upcoming sunday will be a special day for college because of college
+                            <p class="text-content">Upcoming sunday will be a special day for college because of college
                                 anniversary</p>
                             <div class="bottom">
 
@@ -187,7 +190,7 @@
                         </div>
                         <div class="notice-preview">
                             <h3 class="date">Saturday</h3>
-                            <p class="content">Upcoming sunday will be a special day for college because of college
+                            <p class="text-content">Upcoming sunday will be a special day for college because of college
                                 anniversary</p>
                             <div class="bottom">
 
@@ -197,7 +200,7 @@
                         </div>
                         <div class="notice-preview">
                             <h3 class="date">Saturday</h3>
-                            <p class="content">Upcoming sunday will be a special day for college because of college
+                            <p class="text-content">Upcoming sunday will be a special day for college because of college
                                 anniversary</p>
                             <div class="bottom">
 
@@ -213,7 +216,7 @@
     </div>
     <script src="script/loadingScreen.js" defer></script>
     <script type="module" src="script/home.js" defer></script>
-    <script trpe="module" src="script/recentlyAdded.js" defer></script>
+    <script trpe="module" src="script/dashboard.js" defer></script>
     <script type="module" src="script/calender.js" defer></script>
 </body>
 

@@ -192,13 +192,13 @@ td {
 }
 
 .notice-preview p {
-  color: #FFF;
+  color: #fff;
   font-size: 14px;
   /* font-weight: 400; */
-  padding: .5rem 0 0;
+  padding: 0.5rem 0 0;
 }
 
-.posted-date{
+.posted-date {
   color: rgba(32, 36, 44, 1);
   font-size: 14px;
 }

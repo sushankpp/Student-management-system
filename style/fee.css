@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue';
+}
+
+.prior-notice {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #dee2e6;
+  color: #6c757d;
+  text-transform: capitalize;
+  margin-top: 1rem;
+}
+
+table {
+  border: 1px solid #dee2e6;
+  width: 75%;
+  margin-top: 1rem;
+}
+
+tr {
+  height: 50px;
+}
+
+th {
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+tbody td {
+  border: 1px solid #dee2e6;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 0.5rem;
+  font-weight: 300;
+}
+
+tbody tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.button {
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+select {
+  height: 55px;
+  font-size: 20px;
+  background-color: #fff;
+  padding: 0 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.fee-structure {
+  transform: translate(-1500px);
+  display: none;
+  transition: all o.3s ease-in-out;
+}
+
+.fee-structure.show {
+  transform: translate(0);
+  display: block;
+  transition: all o.3s ease-in-out;
+}

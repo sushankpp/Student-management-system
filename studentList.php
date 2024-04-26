@@ -37,16 +37,19 @@
 
             <div class=" vertical-nav-bar ">
                 <ul class="nav-items">
-                    <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
-                    </li>
-                    <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
-                    </li>
-                    <li><a href="teacherList.php"><i
-                                class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
-                    <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
-                    <li><i class="fa-regular fa-messages"></i><a href=""><span>Notices</span></a></li>
-                    <li><a href=""><i class="fa-solid fa-money-check-dollar"></i><span>Semester Fee</span></a></li>
-                    <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                    <ul class="nav-items ">
+                        <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
+                        </li>
+                        <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
+                        </li>
+                        <li><a href="teacherList.php"><i
+                                    class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
+                        <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
+                        <li><a href=""><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
+                        <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
+                                    Fee</span></a></li>
+                        <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                    </ul>
                 </ul>
             </div>
 

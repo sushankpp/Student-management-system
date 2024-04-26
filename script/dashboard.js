@@ -38,11 +38,9 @@ let date = new Date(),
 console.log(date, days[day], curDate, months[month], year);
 
 const colors = {
-  vibrantYellow: '#f6ad2b',
-  vibrantRed: '#ff6347', // Coral
+
   vibrantGreen: '#2ecc71', // Emerald
   accentBlue: '#3498db', // Peter River
-  accentPurple: '#9b59b6', // Amethyst
   accentGreen: '#27ae60', // Nephritis
 };
 
