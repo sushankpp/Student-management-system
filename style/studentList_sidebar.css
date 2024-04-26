@@ -18,12 +18,12 @@ p {
 a {
   text-decoration: none;
   color: #fba834;
+  transition: color 0.2s ease-in-out;
 }
 
-.active{
+.active {
   background-color: #fba834;
 }
-
 
 .nav-items li {
   list-style: none;
@@ -60,7 +60,7 @@ i {
 
 .vertical-nav-bar {
   width: 10dvw;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-right: 1rem;
   transition: all 0.3s ease-in-out;
 }
@@ -82,8 +82,9 @@ i {
   color: #fefefe;
 }
 
-
-
+.vertical-nav-bar.shrink .nav-items li a span {
+  display: none;
+}
 
 .nav-items li:nth-child(2) i,
 .nav-items li:nth-child(4) i {
@@ -94,9 +95,7 @@ i {
   width: 4dvw;
 }
 
-.vertical-nav-bar.shrink .nav-items li a {
-  display: none;
-}
+
 
 .vertical-nav-bar.shrink .nav-items li i {
   display: block;

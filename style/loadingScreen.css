@@ -1,0 +1,39 @@
+.loading-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-screen {
+  width: 200px;
+  height: 200px;
+  background-image: url('../internals/images/st-lawrence-logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.loading-screen::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 5px solid gray;
+  border-radius: 50%;
+  border-left-color: rgba(3, 155, 229, 1);
+  border-top-color: rgba(3, 155, 229, 1);
+  animation: Rotation 600ms infinite linear;
+}
+
+.content {
+  display: none;
+}
+
+@keyframes Rotation {
+  to {
+    transform: rotate(1turn);
+  }
+}
+

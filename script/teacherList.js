@@ -175,7 +175,7 @@ editBtn.addEventListener('click', (event) => {
     formData.append('action', 'edit');
     console.log(formData);
 
-    fetch('backend/studentListHandler.php', {
+    fetch('backend/teacherListHandler.php', {
       method: 'POST',
       body: formData,
     })
@@ -189,7 +189,7 @@ editBtn.addEventListener('click', (event) => {
         }
       })
       .catch((error) => {
-        showNotification('error', 'toast-top-right', data.message);
+        showNotification('error', 'toast-top-right', error.message);
       });
 
     editBtn.innerHTML = 'Edit';
@@ -213,7 +213,7 @@ deleteBtn.addEventListener('click', () => {
 
   console.log(formData);
 
-  fetch('backend/studentListHandler.php', {
+  fetch('backend/teacherListHandler.php', {
     method: 'POST',
     body: formData,
   })
@@ -227,7 +227,7 @@ deleteBtn.addEventListener('click', () => {
       }
     })
     .catch((error) => {
-      showNotification('error', 'toast-top-right', data.message);
+      showNotification('error', 'toast-top-right', error.message);
     });
 });
 

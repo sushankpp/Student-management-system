@@ -130,6 +130,7 @@ function loadOnce() {
     .then((data) => {
       if (data.success === true) {
         if (data.success === true) {
+          console.log(data);
           let studentTableBody = document.getElementById('student-table-body');
           // Clear the current table body
           studentTableBody.innerHTML = '';

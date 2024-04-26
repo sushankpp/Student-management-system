@@ -111,4 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .join('');
   }
+
+  const DepartmentSelect = document.getElementById('department-select');
+
+  DepartmentSelect.addEventListener('change', () => {
+    const selectedValue = DepartmentSelect.value.toLowerCase();
+    console.log(DepartmentSelect.value);
+    let filterCourses;
+    if (selectedValue === 'all') {
+      filterCourses = courses;
+    } else {
+      filterCourses = courses.filter((course) => {
+        return course.department.toLowerCase().includes(selectedValue);
+      });
+    }
+
+    renderTable(filterCourses);
+  });
 });

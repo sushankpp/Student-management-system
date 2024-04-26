@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $gender = $_POST['gender'];
                 $department = $_POST['department'];
 
-                $sql = "UPDATE teahcers SET first_name = ?, last_name =?, email = ?, gender =?, deapartment =? WHERE Id = ?";
+                $sql = "UPDATE teachers SET first_name = ?, last_name =?, email = ?, gender =?, department =? WHERE Id = ?";
                 $stmt = $connection->prepare($sql);
 
                 $stmt->bind_param('sssssi', $first_name, $last_name, $email, $gender, $department, $id);

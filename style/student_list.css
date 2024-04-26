@@ -112,44 +112,6 @@ li {
   color: rgba(35, 50, 85, 0.5);
 }
 
-table {
-  background-color: #fff;
-  border-collapse: collapse;
-  table-layout: inherit;
-  cursor: pointer;
-}
-
-th {
-  height: 50px;
-  width: 15dvw;
-  color: rgba(35, 50, 85, 0.8);
-  text-transform: capitalize;
-  font-weight: 600;
-}
-
-thead {
-  background-color: #f8f8f8;
-}
-
-th:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-td {
-  text-align: center;
-  height: 45px;
-  text-transform: capitalize;
-  color: rgba(35, 50, 85, 0.7);
-  transition: color 0.3s linear;
-}
-
-tbody tr:hover {
-  background-color: #eff7fc;
-}
-
-tbody > tr {
-  border-bottom: 1px solid rgba(35, 50, 85, 1);
-}
 
 .pages-of-result {
   cursor: pointer;
@@ -266,7 +228,7 @@ i {
 }
 
 .results-container.narrow {
-  width: 75%;
+  width: 70%;
 }
 
 .results-container.narrow .search {
