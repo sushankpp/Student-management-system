@@ -90,11 +90,6 @@ include_once ('login.php');
 
 <script type="module" src="script/notification.js" defer></script>
 
-<!--<script type="module" src="../Scripts/homepage.js" defer></script>
-<script type="module" src="../Scripts/form.js" defer></script>
-<script src="script/register.js" defer></script>
-
-<script src="script/loginRegister.js"></script>-->
 </body>
 
 </html>

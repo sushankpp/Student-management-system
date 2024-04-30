@@ -45,7 +45,7 @@
                         <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
                         <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
                                     Fee</span></a></li>
-                        <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                        <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
                     </ul>
                 </ul>
             </div>

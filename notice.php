@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="shortcut icon" href="internals/images/st-lawrence-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/loadingScreen.js">
+    <link rel="stylesheet" href="style/loadingScreen.css">
     <link rel="stylesheet" href="style/studentList_sidebar.css">
     <link rel="stylesheet" href="style/student_list.css">
     <link rel="stylesheet" href="style/notice.css">
@@ -37,7 +37,7 @@
 
                 <div class=" vertical-nav-bar ">
                     <ul class="nav-items ">
-                        <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
+                    <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
                         </li>
                         <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
                         </li>
@@ -47,7 +47,7 @@
                         <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
                         <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
                                     Fee</span></a></li>
-                        <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                        <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
                     </ul>
                 </div>
 

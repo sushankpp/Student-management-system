@@ -42,7 +42,7 @@
             <div class=" vertical-nav-bar shrink">
                 <ul class="nav-items shrink">
                     <ul class="nav-items ">
-                        <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
+                    <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
                         </li>
                         <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
                         </li>
@@ -52,7 +52,7 @@
                         <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
                         <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
                                     Fee</span></a></li>
-                        <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+                        <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
                     </ul>
                 </ul>
             </div>

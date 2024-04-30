@@ -1,3 +1,18 @@
+body {
+  background-color: #ffff;
+  color: #000;
+  transition: all 0.3s;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: #fff !important;
+}
+
+.dark{
+  color: #fff;
+}
+
 .loading-container {
   flex: 1;
   display: flex;
@@ -36,4 +51,3 @@
     transform: rotate(1turn);
   }
 }
-
