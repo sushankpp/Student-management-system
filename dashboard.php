@@ -49,7 +49,7 @@
                         <li><a href="teacherList.php"><i
                                     class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
                         <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
-                        <li><a href=""><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
+                        <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
                         <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
                                     Fee</span></a></li>
                         <li><a href=""><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>

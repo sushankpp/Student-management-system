@@ -8,7 +8,7 @@
 body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue';
   background-color: #fefefe;
-  margin: 1rem 2rem;
+  margin: 1rem;
 }
 
 p {
@@ -31,9 +31,9 @@ a {
   color: #fefefe;
 }
 
-i {
+/* i {
   padding-right: 1rem;
-}
+} */
 
 .header {
   width: 100%;
@@ -69,12 +69,19 @@ i {
   cursor: pointer;
   background-color: #201658;
   transition: all 0.3s ease-in-out;
+ 
+
 }
+
+
 
 .nav-items li a {
   font-size: 14px;
   color: #fefefe;
   transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-items li i {
@@ -86,13 +93,20 @@ i {
   display: none;
 }
 
-.nav-items li:nth-child(2) i,
+/* .nav-items li:nth-child(2) i,
 .nav-items li:nth-child(4) i {
   padding-right: 1.5rem;
-}
+} */
 
 .vertical-nav-bar.shrink {
   width: 4dvw;
+
+.nav-items .nav-items{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 }
 
 

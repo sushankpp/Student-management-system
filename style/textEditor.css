@@ -1,0 +1,120 @@
+.container {
+  background-color: #ffffff;
+  width: 99vmin;
+  padding: 50px 30px;
+  border-radius: 10px;
+  box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+  z-index: 11;
+  position: relative;
+  transform: translate(-1000px, -1000px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.show {
+  transform: translate(450px, 50px);
+  opacity: 1;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.fa-x {
+  cursor: pointer;
+  float: right;
+  margin-top: -1rem;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 13px;
+}
+
+button {
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  border: none;
+  background-color: #ffffff;
+  outline: none;
+  color: #020929;
+}
+.container i {
+  padding-right: 0;
+}
+select {
+  padding: 7px;
+  border: 1px solid #020929;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+input[type='color'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 40px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+}
+input[type='color']::-webkit-color-swatch {
+  border-radius: 15px;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+}
+input[type='color']::-moz-color-swatch {
+  border-radius: 15px;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+}
+#text-input {
+  margin-top: 10px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  height: 36vh;
+}
+.active {
+  background-color: #e0e9ff;
+}
+
+#text-input:focus {
+  outline: none;
+}
+
+#preview-title {
+  margin-top: 10px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  height: 7vh;
+}
+
+#preview-title:focus {
+  outline: none;
+}
+
+span {
+  font-weight: 500;
+}
+
+.sendButton {
+  height: 36px;
+  padding: 0 1rem;
+  width: 80px;
+  background-color: #0b57d0;
+  color: #ffffff;
+  margin-top: 1rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 600;
+}
