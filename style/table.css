@@ -25,12 +25,18 @@ td {
   text-align: center;
   height: 45px;
   text-transform: capitalize;
-  color: rgba(35, 50, 85, 0.7);
-  transition: color 0.3s linear;
+  /* color: rgba(35, 50, 85, 0.7); */
+
+  transition: all 0.3s linear;
+}
+
+tbody tr{
+scale: 1;
+transition: scale 0.2s ease;
 }
 
 tbody tr:hover {
-  background-color: #eff7fc;
+  scale: 0.98;
 }
 
 tbody > tr {

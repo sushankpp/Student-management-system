@@ -21,3 +21,13 @@ closeTextEditorBtn.addEventListener('click', () => {
   dialogPopup.close();
   dialogPopup.classList.remove('show');
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const setTheme = JSON.parse(localStorage.getItem('SetTheme'));
+
+  if (setTheme === 'DARK') {
+    const noticeHeader = document.querySelector('.notice-header');
+
+    noticeHeader.classList.add('notice-dark-mode');
+  }
+});

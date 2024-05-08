@@ -5,12 +5,21 @@ body {
 }
 
 .dark-mode {
-  background-color: #000;
+  background-color: #000 !important;
   color: #fff !important;
 }
 
-.dark{
-  color: #fff;
+.dark-mode .dark {
+  color: #fff !important;
+}
+
+.notice-dark-mode {
+  background-color: #495057 !important;
+}
+
+.navDark {
+  background-color: #333333 !important;
+  transition:  background-color 0.3s ease;
 }
 
 .loading-container {

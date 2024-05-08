@@ -116,3 +116,13 @@ NextBtn.addEventListener('click', (e) => {
 });
 
 updateData();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const setTheme = JSON.parse(localStorage.getItem('SetTheme'));
+
+  if (setTheme === 'DARK') {
+    const feeTable = document.querySelector('.prior-notice');
+
+    feeTable.classList.add('notice-dark-mode');
+  }
+});

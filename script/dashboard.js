@@ -38,7 +38,6 @@ let date = new Date(),
 console.log(date, days[day], curDate, months[month], year);
 
 const colors = {
-
   vibrantGreen: '#2ecc71', // Emerald
   accentBlue: '#3498db', // Peter River
   accentGreen: '#27ae60', // Nephritis
@@ -121,3 +120,28 @@ function loadData() {
 
 loadData();
 changeNoticeBG();
+
+window.addEventListener('DOMContentLoaded', () => {
+  // In the second JavaScript file
+  const setTheme = JSON.parse(localStorage.getItem('SetTheme'));
+  console.log(setTheme); // Output: 'DARK' or 'LIGHT'
+
+  if (setTheme === 'DARK') {
+    const table = document.querySelector('table');
+    const thead = document.querySelectorAll('th');
+    const tbody = document.getElementById('resultBody'); // Select the tbody element
+    const td = tbody.querySelectorAll('td'); // Select all td elements within tbody
+
+    console.log(td);
+
+    // Apply dark mode styles to everything
+    table.classList.add('dark-mode');
+    thead.forEach((element) => element.classList.add('dark-mode'));
+    thead.forEach((e) => {
+      e.style.borderRight = '1px solid #fff';
+    });
+    td.forEach((e) => {
+      e.style.boxShadow = '0px 2px 8px 0px #fff';
+    });
+  }
+});
