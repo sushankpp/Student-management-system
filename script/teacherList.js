@@ -252,7 +252,6 @@ function searchStudent(row) {
   });
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
   const setTheme = JSON.parse(localStorage.getItem('SetTheme'));
 
@@ -261,11 +260,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const table = document.querySelector('table');
     const thead = document.querySelectorAll('th');
+    const navItems = document.querySelector('.nav-items');
+
+    // Toggle dark mode for paragraphs and headings
+    navItems.classList.add('navDark');
 
     // Apply dark mode styles to everything
     table.classList.add('dark-mode');
     thead.forEach((element) => element.classList.add('dark-mode'));
     TableSortResult.classList.add('dark-mode');
-   
   }
 });

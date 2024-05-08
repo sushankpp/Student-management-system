@@ -310,6 +310,10 @@ window.addEventListener('DOMContentLoaded', () => {
       TableSortResultHeader2 = document.querySelector('.total-result-page');
     const table = document.querySelector('table');
     const thead = document.querySelectorAll('th');
+    const navItems = document.querySelector('.nav-items');
+
+    // Toggle dark mode for paragraphs and headings
+    navItems.classList.add('navDark')
 
     // Apply dark mode styles to everything
     table.classList.add('dark-mode');

@@ -139,6 +139,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const table = document.querySelector('table');
     const thead = document.querySelectorAll('th');
     const tr = document.querySelectorAll('tr');
+    const navItems = document.querySelector('.nav-items');
+
+    // Toggle dark mode for paragraphs and headings
+    navItems.classList.add('navDark');
 
     console.log(tr);
 

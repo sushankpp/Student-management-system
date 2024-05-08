@@ -27,6 +27,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (setTheme === 'DARK') {
     const noticeHeader = document.querySelector('.notice-header');
+    const navItems = document.querySelector('.nav-items');
+
+    // Toggle dark mode for paragraphs and headings
+    navItems.classList.add('navDark')
 
     noticeHeader.classList.add('notice-dark-mode');
   }

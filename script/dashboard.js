@@ -131,6 +131,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const thead = document.querySelectorAll('th');
     const tbody = document.getElementById('resultBody'); // Select the tbody element
     const td = tbody.querySelectorAll('td'); // Select all td elements within tbody
+    const navItems = document.querySelector('.nav-items');
+
+    // Toggle dark mode for paragraphs and headings
+    navItems.classList.add('navDark');
 
     console.log(td);
 
