@@ -37,7 +37,7 @@
 
                 <div class=" vertical-nav-bar ">
                     <ul class="nav-items ">
-                    <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
+                        <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
                         </li>
                         <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
                         </li>
@@ -148,52 +148,12 @@
                         <div id="preview-title" contenteditable="true"></div>
                         <span>Notice Content:</span>
                         <div id="text-input" contenteditable="true"></div>
-                        <button class="sendButton" id="sendButton">Send</button>
+                        <button class="sendButton" id="sendButton" onClick="window.location.href=window.location.href">Send</button>
                     </dialog>
 
                     <div class="posted-notice-div">
-                        <div class="notice">
-                            <div class="notice-title">
-                                <h2>Notice</h2>
-                            </div>
-                            <div class="notice-content">
-                                <p class="content-text">hello how are you im under the water hguhuihuh. here too much
-                                    raining save me me bad swimmer. I scared of water so scary fishmen eat me huhuhu.
-                                </p>
-                            </div>
-                            <div class="notice-time-info">
-                                <p class="time">Posted on: <span>4/29/2024</span></p>
-                                <p class="posted-by">Posted by: Admin</p>
-                            </div>
-                        </div>
-                        <div class="notice">
-                            <div class="notice-title">
-                                <h2>Notice</h2>
-                            </div>
-                            <div class="notice-content">
-                                <p class="content-text">hello how are you im under the water hguhuihuh. here too much
-                                    raining save me me bad swimmer. I scared of water so scary fishmen eat me huhuhu.
-                                </p>
-                            </div>
-                            <div class="notice-time-info">
-                                <p class="time">Posted on: <span>4/29/2024</span></p>
-                                <p class="posted-by">Posted by: Admin</p>
-                            </div>
-                        </div>
-                        <div class="notice">
-                            <div class="notice-title">
-                                <h2>Notice</h2>
-                            </div>
-                            <div class="notice-content">
-                                <p class="content-text">hello how are you im under the water hguhuihuh. here too much
-                                    raining save me me bad swimmer. I scared of water so scary fishmen eat me huhuhu.
-                                </p>
-                            </div>
-                            <div class="notice-time-info">
-                                <p class="time">Posted on: <span>4/29/2024</span></p>
-                                <p class="posted-by">Posted by: Admin</p>
-                            </div>
-                        </div>
+
+
 
 
                     </div>

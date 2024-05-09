@@ -95,7 +95,7 @@ input[type='color']::-moz-color-swatch {
 #preview-title {
   margin-top: 10px;
   border: 1px solid #dddddd;
-  padding: 20px;
+  padding:0 20px;
   height: 7vh;
 }
 

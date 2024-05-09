@@ -10,7 +10,6 @@ let spacingButtons = document.querySelectorAll('.spacing');
 let formatButtons = document.querySelectorAll('.format');
 let scriptButtons = document.querySelectorAll('.script');
 
-
 //List of fontlist
 let fontList = [
   'Arial',
@@ -116,21 +115,26 @@ const highlighterRemover = (className) => {
   });
 };
 
-const saveContentToLocalStorage = () => {
-  const content = writingArea.innerHTML;
+// const saveContentToLocalStorage = () => {
+//   const titleContent = titleArea.innerHTML;
+//   const content = writingArea.innerHTML;
 
-  localStorage.setItem('editorContent', content);
-};
+//   localStorage.setItem('editorContent', content);
+//   localStorage.setItem('titleContent', titleContent);
+// };
 
-const loadFromLocalStorage = () => {
-  const content = localStorage.getItem('editorContent');
+// const loadFromLocalStorage = () => {
+//   const content = localStorage.getItem('editorContent');
+//   const titleContent = localStorage.getItem('titleContent');
 
-  writingArea.innerHTML = content;
-};
+//   writingArea.innerHTML = content;
+//   titleArea.innerHTML = titleContent;
+// };
 
 window.onload = () => {
   initializer();
   loadFromLocalStorage();
 };
 
-writingArea.addEventListener('input', saveContentToLocalStorage);
+// writingArea.addEventListener('input', saveContentToLocalStorage);
+// titleArea.addEventListener('input', saveContentToLocalStorage);
