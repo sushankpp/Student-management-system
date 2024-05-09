@@ -167,48 +167,8 @@
 
                     <div class="noticeBoard-div">
                         <h2>Notices</h2>
-                        <div class="notice-preview">
-                            <h3 class="date">Saturday</h3>
-                            <p class="text-content">Upcoming sunday will be a special day for college because of college
-                                anniversary</p>
-                            <div class="bottom">
 
-                                <a href="">Read All</a>
-                                <div class="posted-date"></div>
-                            </div>
-                        </div>
 
-                        <div class="notice-preview">
-                            <h3 class="date">Saturday</h3>
-                            <p class="text-content">Upcoming sunday will be a special day for college because of college
-                                anniversary</p>
-                            <div class="bottom">
-
-                                <a href="">Read All</a>
-                                <div class="posted-date"></div>
-                            </div>
-                        </div>
-                        <div class="notice-preview">
-                            <h3 class="date">Saturday</h3>
-                            <p class="text-content">Upcoming sunday will be a special day for college because of college
-                                anniversary</p>
-                            <div class="bottom">
-
-                                <a href="">Read All</a>
-                                <div class="posted-date"></div>
-                            </div>
-                        </div>
-                        <div class="notice-preview">
-                            <h3 class="date">Saturday</h3>
-                            <p class="text-content">Upcoming sunday will be a special day for college because of college
-                                anniversary</p>
-                            <div class="bottom">
-
-                                <a href="">Read All</a>
-                                <div class="posted-date"></div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>

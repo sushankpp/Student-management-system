@@ -2,13 +2,13 @@
   margin: 1rem 0;
   padding: 1rem;
   border-radius: 10px;
-  background-color: #dee2e6;
+  background-color: rgba(179, 180, 183, 0.09);
 }
 
 .notice-header h1 {
   font-size: 24px;
   font-weight: 500;
-  color: #495057;
+  color: #000;
 }
 
 .notice-header p {
@@ -28,7 +28,7 @@
   padding: 1rem;
   border-radius: 5px;
   font-weight: 600;
-  font-family: inherit;
+  font-family: serif;
   border: none;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   gap: 1rem;

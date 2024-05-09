@@ -63,14 +63,15 @@ header .current-date {
 }
 
 .calendar li {
-  color: #333;
+  color: black;
   width: calc(100% / 7);
   font-size: 1.07rem;
 }
 
 .calendar .weeks li {
-  font-weight: 500;
   cursor: default;
+  color: #000;
+  font-weight: 600;
 }
 
 .calendar .days li {
@@ -78,10 +79,12 @@ header .current-date {
   cursor: pointer;
   position: relative;
   margin-top: 16px;
+  color: #fff;
 }
 
 .days li.inactive {
-  color: #aaa;
+  color: #fff;
+  opacity: 30%;
 }
 
 .days li.active {
