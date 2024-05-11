@@ -136,6 +136,9 @@ function loadOnce() {
         // Clear the current table body
         studentTableBody.innerHTML = '';
 
+        console.log(data.totalStudent);
+        console.log(data.maleCount);
+        console.log(data.femaleCount);
         // Loop through each student in the data
         data.students.forEach((student) => {
           // Create a new table row and fill it with the student's data

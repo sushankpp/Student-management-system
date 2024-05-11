@@ -70,12 +70,12 @@
                                 <p class="name">students</p>
                                 <div class="indication">
                                     <div class="color-1"></div>
-                                    <p class="title">Male</p>
+                                    <p class="title">Male (<span id="maleCount"></span>)</p>
 
                                     <div class="color-2"></div>
-                                    <p class="title">Female</p>
+                                    <p class="title">Female (<span id="femaleCount"></span>)</p>
                                 </div>
-                                <span class="total-number">308</span>
+                                <span class="total-number"></span>
                             </div>
                         </div>
 
@@ -87,12 +87,12 @@
                                 <p class="name">teacher</p>
                                 <div class="indication">
                                     <div class="color-1"></div>
-                                    <p class="title">Male</p>
+                                    <p class="title">Male (<span id="maleC"></span>)</p>
 
                                     <div class="color-2"></div>
-                                    <p class="title">Female</p>
+                                    <p class="title">Female (<span id="femaleC"></span>)</p>
                                 </div>
-                                <span class="total-number">308</span>
+                                <span class="total-number teacherNum"></span>
                             </div>
                         </div>
 
@@ -106,7 +106,7 @@
                                     <div class="color-1"></div>
                                     <p class="title">Science(Information Technology)</p>
                                 </div>
-                                <span class="total-number">308</span>
+                                <span class="total-number">8</span>
                             </div>
                         </div>
                     </div>

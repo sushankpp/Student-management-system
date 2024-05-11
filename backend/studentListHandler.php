@@ -1,6 +1,6 @@
 <?php
-include('dbConnect.php');
-$total = mysqli_query($connection, 'SELECT COUNT(*) as total FROM student')->fetch_assoc()['total'];
+include ('dbConnect.php');
+
 
 
 header('Content-Type: application/json', true, 200);
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST['action'])) {
         $action = $_POST['action'];
         switch ($action) {
-            case'edit':
+            case 'edit':
                 $id = $_POST['id'];
                 $first_name = $_POST['first_name'];
                 $last_name = $_POST['last_name'];
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $sql = "UPDATE student SET first_name = ?, last_name = ?, email = ?, gender = ?, department = ?, address=?,  WHERE ID = ?";
                 $stmt = $connection->prepare($sql);
 
-                $stmt->bind_param('ssssssi', $first_name, $last_name, $email, $gender, $department,$address,  $id);
+                $stmt->bind_param('ssssssi', $first_name, $last_name, $email, $gender, $department, $address, $id);
 
                 if ($stmt->execute()) {
                     echo json_encode(['success' => true, 'message' => 'Student updated successfully']);
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 }
 
 
-            case'delete':
+            case 'delete':
                 $id = $_POST['id'];
 
                 $sql = 'DELETE FROM student WHERE ID = ?';
@@ -56,6 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $page = isset($_POST['page']) ? $_POST['page'] : 1;
                 $limit = isset($_POST['limit']) ? $_POST['limit'] : 8;
                 $offset = ($page - 1) * $limit;
+
+                $otal = "SELECT COUNT(*) AS total FROM student";
+                $male = "SELECT SUM(CASE WHEN gender = 'Male' THEN 1 ELSE 0 END) as male from student";
+                $female = "SELECT SUM(CASE WHEN gender = 'Femle' THEN 1 ELSE 0 END) as female from student";
 
                 $sql = "SELECT * FROM student";
 

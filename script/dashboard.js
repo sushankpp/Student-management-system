@@ -4,6 +4,9 @@ const TableContainer = document.getElementById('recentlyAddedTable');
 const noticePreviewDiv = document.querySelectorAll('.notice-preview');
 const noticeBoardDiv = document.querySelector('.noticeBoard-div');
 const noticeDay = document.querySelector('.date');
+const totalNumber = document.querySelector('.total-number');
+const maleCount = document.getElementById('maleCount');
+const femaleCount = document.getElementById('femaleCount');
 
 const colors = [
   { value: '#2ecc71' }, // Emerald (green)
@@ -26,6 +29,11 @@ function loadData() {
     .then((data) => {
       if (data.success) {
         console.log(data);
+
+        totalNumber.innerHTML = data.total;
+        maleCount.innerHTML = data.maleCount;
+        femaleCount.innerHTML = data.femaleCount;
+
         let RecentlyAddedTableBody = document.getElementById('resultBody');
         RecentlyAddedTableBody.innerHTML = '';
 
@@ -153,3 +161,33 @@ const mobileNav = () => {
 mobileNav();
 
 window.addEventListener('resize', mobileNav);
+
+function totalCounts() {
+  const totalNumber = document.querySelector('.teacherNum');
+  const maleCount = document.getElementById('maleC');
+  const femaleCount = document.getElementById('femaleC');
+
+  let formData = new FormData();
+  formData.append('action', 'showTeachers');
+
+  console.log(formData);
+
+  fetch('backend/recentDataHandler.php', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success === true) {
+        console.log(data);
+        totalNumber.innerHTML = data.total;
+        maleCount.innerHTML = (data.maleCount);
+        femaleCount.innerHTML = (data.femaleCount);
+      }
+    });
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+}
+
+totalCounts();

@@ -223,6 +223,18 @@ td {
   margin-bottom: 0.5rem;
 }
 
+#maleCount,
+#maleC{
+  color: #0b7979;
+  font-size: 13px;
+}
+
+#femaleCount,
+#femaleC{
+  color:#f57a16;
+  font-size: 13px;
+}
+
 @media screen and (max-width: 768px) {
   .results-container {
     flex-direction: column;
