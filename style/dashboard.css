@@ -302,7 +302,7 @@ td {
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    width: 100%;
+    width: 95%;
     box-shadow: 10px 10px 10px rgba(129, 128, 127, 0.09);
   }
 
@@ -318,7 +318,7 @@ td {
 
   .recently-added {
     margin-top: 2rem;
-    width: 100%;
+    width: 95%;
     height: 230px;
     border-radius: 10px;
     box-shadow: 0 0 10px 10px rgba(129, 128, 127, 0.09);
@@ -326,10 +326,7 @@ td {
     overflow: scroll;
     scroll-behavior: smooth;
   }
-  .wrapper{
-    max-width: 100% !important;
-    min-width: 300px;
-  }
+
   .noticeBoard-div {
     width: 100%;
     background-color: rgba(179, 180, 183, 0.09);

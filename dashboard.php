@@ -25,7 +25,7 @@
     <div class="content" id="content">
 
 
-        <header class="header shrink">
+        <header class="header ">
 
 
             <img src="internals/images/st-lawrence-logo.png" alt="college logo" class="logo">
@@ -41,8 +41,8 @@
 
         <main class="main-content-container">
 
-            <div class=" vertical-nav-bar shrink">
-                <ul class="nav-items shrink">
+            <div class=" vertical-nav-bar ">
+                <ul class="nav-items ">
 
                     <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
                     </li>
@@ -59,7 +59,7 @@
                 </ul>
             </div>
 
-            <div class="results-container narrow">
+            <div class="results-container">
                 <div class="left-side">
                     <div class="curriculum-summary">
                         <div class="students-div">

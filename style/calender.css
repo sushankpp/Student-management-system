@@ -1,5 +1,3 @@
-
-
 .wrapper {
   width: 450px;
   background: #fff;
@@ -109,4 +107,10 @@ header .current-date {
 
 .days li:not(.active):hover::before {
   background: #5b2f2f;
+}
+
+@media only screen and (max-width: 765px) {
+  .wrapper {
+   width: 420px;
+  }
 }

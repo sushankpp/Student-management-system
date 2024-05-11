@@ -130,3 +130,26 @@ function updateNotice() {
 }
 
 updateNotice();
+
+const mobileNav = () => {
+  const header = document.querySelector('.header');
+  const nav = document.querySelector('.nav-items');
+  const verticalNav = document.querySelector('.vertical-nav-bar');
+  const resultContainer = document.querySelector('.results-container');
+
+  if (window.innerWidth >= 768) {
+    header.classList.add('shrink');
+    nav.classList.add('shrink');
+    verticalNav.classList.add('shrink');
+    resultContainer.classList.add('narrow');
+  } else {
+    header.classList.remove('shrink');
+    nav.classList.remove('shrink');
+    verticalNav.classList.remove('shrink');
+    resultContainer.classList.remove('narrow');
+  }
+};
+
+mobileNav();
+
+window.addEventListener('resize', mobileNav);
