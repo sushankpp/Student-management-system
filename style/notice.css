@@ -1,6 +1,6 @@
 .notice-header {
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 10px;
   background-color: rgba(179, 180, 183, 0.09);
 }
@@ -28,7 +28,6 @@
   padding: 1rem;
   border-radius: 5px;
   font-weight: 600;
-  font-family: serif;
   border: none;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   gap: 1rem;

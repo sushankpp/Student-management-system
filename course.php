@@ -27,6 +27,7 @@
                 <p class="location">Administration/ <span class="exact-location">Course List</span></p>
             </div>
 
+            <i class="fa-solid fa-bars hamMenu"></i>
         </header>
 
 

@@ -14,6 +14,8 @@ if (once) {
   once = false;
 }
 
+loadOnce();
+
 const genderSelect = document.getElementById('gender-select');
 const departmentSelect = document.getElementById('department-select');
 let selectedGender = genderSelect.value;
@@ -94,14 +96,27 @@ function loadOnce() {
         data.teachers.forEach((teacher) => {
           let row = document.createElement('tr');
 
-          row.innerHTML = `
-    <td>${teacher.Id}</td>
-    <td>${teacher.first_name}</td>
-    <td>${teacher.last_name}</td>
-    <td>${teacher.email}</td>
-    <td>${teacher.gender}</td>
-    <td>${teacher.department}</td>
-    `;
+          if (window.innerWidth <= 750) {
+            row.innerHTML = `
+            <td>${teacher.Id}</td>
+            <td>${teacher.first_name}</td>
+            <td>${teacher.last_name}</td>
+            <td style= "display:none;">${teacher.email}</td>
+            <td>${teacher.gender}</td>
+            <td>${teacher.department}</td>
+            <td style= "display:none;">${teacher.address}</td>
+              `;
+          } else {
+            row.innerHTML = `
+            <td>${teacher.Id}</td>
+            <td>${teacher.first_name}</td>
+            <td>${teacher.last_name}</td>
+            <td>${teacher.email}</td>
+            <td>${teacher.gender}</td>
+            <td>${teacher.department}</td>
+            <td style= "display:none;">${teacher.address}</td>
+              `;
+          }
           showSidebar(row);
           searchStudent(row);
           teachersTable.appendChild(row);
@@ -121,29 +136,32 @@ function showSidebar(row) {
     let email = row.children[3].innerText;
     let gender = row.children[4].innerText;
     let department = row.children[5].innerText;
+    let address = row.children[6].textContent;
 
-    let student = {
+    let teacher = {
       ID: id,
       first_name: fname,
       last_name: lname,
       email: email,
       gender: gender,
       department: department,
+      address: address,
     };
 
-    console.log(student);
+    console.log(teacher);
 
     header.classList.add('shrink');
     navBar.classList.add('shrink');
     resultsContainer.classList.add('narrow');
     details.classList.add('show');
 
-    document.querySelector('.id').value = student.ID;
-    document.querySelector('.firstN').value = student.first_name;
-    document.querySelector('.lastN').value = student.last_name;
-    document.querySelector('.Uemail').value = student.email;
-    document.querySelector('.sex').value = student.gender;
-    document.querySelector('.division').value = student.department;
+    document.querySelector('.id').value = teacher.ID;
+    document.querySelector('.firstN').value = teacher.first_name;
+    document.querySelector('.lastN').value = teacher.last_name;
+    document.querySelector('.Uemail').value = teacher.email;
+    document.querySelector('.sex').value = teacher.gender;
+    document.querySelector('.division').value = teacher.department;
+    document.querySelector('.location').value = teacher.address;
   });
 }
 
@@ -269,5 +287,16 @@ window.addEventListener('DOMContentLoaded', () => {
     table.classList.add('dark-mode');
     thead.forEach((element) => element.classList.add('dark-mode'));
     TableSortResult.classList.add('dark-mode');
+  }
+});
+
+const closeBtn = document.querySelector('.closeBtn');
+
+closeBtn.addEventListener('click', () => {
+  if (details.classList.contains('show')) {
+    details.classList.remove('show');
+    header.classList.remove('shrink');
+    navBar.classList.remove('shrink');
+    resultsContainer.classList.remove('narrow');
   }
 });

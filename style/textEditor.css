@@ -95,7 +95,7 @@ input[type='color']::-moz-color-swatch {
 #preview-title {
   margin-top: 10px;
   border: 1px solid #dddddd;
-  padding:0 20px;
+  padding: 0 20px;
   height: 7vh;
 }
 
@@ -117,4 +117,11 @@ span {
   border-radius: 10px;
   font-family: inherit;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 750px) {
+  .show {
+    transform: translate(30px, 0px);
+    opacity: 1;
+  }
 }

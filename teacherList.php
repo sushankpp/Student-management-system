@@ -28,6 +28,7 @@
                 <p class="location">Administration/ <span class="exact-location">Teachers List</span></p>
             </div>
 
+            <i class="fa-solid fa-bars hamMenu"></i>
         </header>
 
 
@@ -99,6 +100,7 @@
             <section class="details">
                 <div class="studentDetails">
                     <h2>Student Details</h2>
+                    <i class="fa-solid fa-times closeBtn"></i>
 
                     <div class="ref-id-div">
                         <p class="ref-id">ref id</p>
@@ -137,7 +139,7 @@
 
                     <div class="stauts-div">
                         <p class="current-status">current status</p>
-                        <span class="value">student</span>
+                        <span class="value">Teacher</span>
                     </div>
 
                     <button type="button" value="edit" name="edit" id="edit_student" class="edit btn">edit</button>

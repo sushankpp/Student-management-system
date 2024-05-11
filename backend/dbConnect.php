@@ -3,7 +3,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'demo';
+$database = 'sms';
 // $encoding = 'utf8mb4';
 
 // try {

@@ -20,7 +20,7 @@
     <div class="loading-container" id="loading-container">
         <div class="loading-screen"></div>
     </div>
-    <div class="content" id="content">
+    <div class="content" id="content" style="position: relative;">
         <header class="header">
 
 
@@ -30,6 +30,8 @@
                 <p class="location">Administration/ <span class="exact-location">Students List</span></p>
             </div>
 
+
+            <i class="fa-solid fa-bars hamMenu"></i>
         </header>
 
 
@@ -37,19 +39,19 @@
 
             <div class=" vertical-nav-bar ">
                 <ul class="nav-items">
-                    
+
                     <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
-                        </li>
-                        <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
-                        </li>
-                        <li><a href="teacherList.php"><i
-                                    class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
-                        <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
-                        <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
-                        <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
-                                    Fee</span></a></li>
-                        <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
-                    
+                    </li>
+                    <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
+                    </li>
+                    <li><a href="teacherList.php"><i
+                                class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
+                    <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
+                    <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
+                    <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
+                                Fee</span></a></li>
+                    <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+
                 </ul>
             </div>
 
@@ -122,6 +124,7 @@
             <section class="details">
                 <div class="studentDetails">
                     <h2>Student Details</h2>
+                    <i class="fa-solid fa-times closeBtn"></i>
 
                     <div class="ref-id-div">
                         <p class="ref-id">ref id</p>

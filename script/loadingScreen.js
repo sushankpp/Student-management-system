@@ -28,12 +28,10 @@ function toggleDarkMode() {
     p.forEach((element) => element.classList.add('dark'));
     heading.forEach((element) => element.classList.add('dark'));
   } else {
-  
     const navItems = document.querySelector('.nav-items');
 
     // Toggle dark mode for paragraphs and headings
     navItems.classList.remove('navDark');
-
   }
 }
 
@@ -66,3 +64,18 @@ if (darkModeBtn) {
 }
 
 // toggleDarkMode();
+
+const hamMenu = document.querySelector('.hamMenu'); // Assuming this is the icon element
+const navBar = document.querySelector('.vertical-nav-bar');
+
+const navSlide = () => {
+  navBar.classList.toggle('show-nav');
+
+  if (navBar.classList.contains('show-nav')) {
+    hamMenu.classList.replace('fa-bars', 'fa-times'); // Replace bars with X (assuming Font Awesome)
+  } else {
+    hamMenu.classList.replace('fa-times', 'fa-bars'); // Replace X with bars
+  }
+};
+
+hamMenu.addEventListener('click', navSlide);

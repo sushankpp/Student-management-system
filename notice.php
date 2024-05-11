@@ -23,13 +23,13 @@
         </div>
         <div class="content" id="content">
 
-
             <header class="header">
                 <img src="internals/images/st-lawrence-logo.png" alt="college logo" class="logo">
                 <div class="current-page-name">
                     <p class="location">Administration/ <span class="exact-location">Notice Board</span></p>
                 </div>
 
+                <i class="fa-solid fa-bars hamMenu"></i>
             </header>
 
 

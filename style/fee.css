@@ -82,3 +82,15 @@ select {
   display: block;
   transition: all o.3s ease-in-out;
 }
+
+
+
+@media only screen and (max-width:750px){
+  table{
+    width: 100%;
+  }
+
+  select{
+    font-size: 13px;
+  }
+}

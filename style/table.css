@@ -30,9 +30,9 @@ td {
   transition: all 0.3s linear;
 }
 
-tbody tr{
-scale: 1;
-transition: scale 0.2s ease;
+tbody tr {
+  scale: 1;
+  transition: scale 0.2s ease;
 }
 
 tbody tr:hover {
@@ -41,4 +41,25 @@ tbody tr:hover {
 
 tbody > tr {
   border-bottom: 1px solid rgba(35, 50, 85, 1);
+}
+
+@media only screen and (max-width: 750px) {
+  th {
+    width: 18vw;
+  }
+
+  th:nth-child(4) {
+    display: none;
+  }
+
+  .details {
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    right: 0;
+  }
+
+  .details .fa-times {
+    translate: 190px -80px;
+  }
 }

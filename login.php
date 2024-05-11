@@ -21,7 +21,7 @@
         <button class="login-button btn" id="login-button">Log in</button>
 
         <p class="text">Don't have an account?
-            <a href="register.php" class=" reggister" id="register">Register</a>
+            <a href="#" class=" reggister" id="register">Register</a>
         </p>
     </form>
 </div>

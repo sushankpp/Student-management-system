@@ -8,7 +8,7 @@
 body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue';
   background-color: #fefefe;
-  margin: 1rem;
+  margin: 0 1rem;
 }
 
 p {
@@ -21,24 +21,17 @@ a {
   transition: color 0.2s ease-in-out;
 }
 
-.active {
-  background-color: #fba834;
-}
-
 .nav-items li {
   list-style: none;
   padding: 1.8rem 1rem;
   color: #fefefe;
 }
 
-/* i {
-  padding-right: 1rem;
-} */
-
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   transition: all 0.3s ease-in-out;
 }
 
@@ -60,18 +53,16 @@ a {
 
 .vertical-nav-bar {
   width: 10dvw;
-  margin-top: 1rem;
-  margin-right: 1rem;
+  height: 100%;
+  margin: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
 .nav-items {
   cursor: pointer;
-  background-color: #201658;
+  background-color: #0b7979;
   transition: all 0.3s ease-in-out;
 }
-
-
 
 .nav-items li a {
   font-size: 14px;
@@ -99,15 +90,13 @@ a {
 .vertical-nav-bar.shrink {
   width: 4dvw;
 
-.nav-items .nav-items{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  .nav-items .nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
-}
-
-
 
 .vertical-nav-bar.shrink .nav-items li i {
   display: block;
@@ -119,4 +108,60 @@ a {
 
 .header.shrink {
   width: 75%;
+}
+
+.fa-bars {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    margin: 0;
+  }
+  .header img {
+    width: 23dvw;
+    height: 100px;
+  }
+
+  .fa-bars,
+  .fa-times {
+    color: lightblue;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: .5rem;
+  }
+
+  .vertical-nav-bar {
+    position: absolute;
+    z-index: 10;
+    transform: translate(-500px);
+    margin: 0;
+    width: 3rem !important;
+    border-radius: 0;
+  }
+
+  .nav-items {
+    width: 100%;
+    height: 100%;
+    /* margin: 0; */
+  }
+
+  .nav-items li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid;
+    scale: 1;
+    transition: scale 0.2s;
+  }
+
+  .nav-items li:hover {
+    scale: 1.1;
+  }
+
+  .show-nav {
+    transform: translate(0);
+  }
+
+
 }

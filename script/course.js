@@ -98,16 +98,30 @@ document.addEventListener('DOMContentLoaded', () => {
     tableData.innerHTML = data
       .map((course) => {
         const authors = course.author.split(',').join('<br>');
-        return `
-        <tr style='height:50px'>
-          <td> ${course.id}</td>
-          <td> ${course.name}</td>
-          <td> ${course.semester}</td>
-          <td> ${authors}</td>
-          <td> ${course.department}</td>
-          <td> ${course.publication}</td>
-        </tr>
-      `;
+        // Check for screen width and conditionally display author name
+        if (window.innerWidth <= 750) {
+          return `
+            <tr style='height:50px'>
+              <td> ${course.id}</td>
+              <td> ${course.name}</td>
+              <td> ${course.semester}</td>
+              <td style="display: none;"> ${authors}</td>
+              <td> ${course.department}</td>
+              <td> ${course.publication}</td>
+            </tr>
+          `;
+        } else {
+          return `
+            <tr style='height:50px'>
+              <td> ${course.id}</td>
+              <td> ${course.name}</td>
+              <td> ${course.semester}</td>
+              <td> ${authors}</td>
+              <td> ${course.department}</td>
+              <td> ${course.publication}</td>
+            </tr>
+          `;
+        }
       })
       .join('');
   }

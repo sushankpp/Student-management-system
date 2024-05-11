@@ -34,6 +34,8 @@
                 <p class="location">Administration/ <span class="exact-location">Dashboard</span></p>
             </div>
 
+            <i class="fa-solid fa-bars hamMenu"></i>
+
         </header>
 
 

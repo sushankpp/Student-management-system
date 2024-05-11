@@ -33,11 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $email = $_POST['email'];
                 $gender = $_POST['gender'];
                 $department = $_POST['department'];
+                $address = $_POST['address'];
 
-                $sql = "UPDATE teachers SET first_name = ?, last_name =?, email = ?, gender =?, department =? WHERE Id = ?";
+                $sql = "UPDATE teachers SET first_name = ?, last_name =?, email = ?, gender =?, department =?, address=?,  WHERE Id = ?";
                 $stmt = $connection->prepare($sql);
 
-                $stmt->bind_param('sssssi', $first_name, $last_name, $email, $gender, $department, $id);
+                $stmt->bind_param('ssssssi', $first_name, $last_name, $email, $gender, $department, $address , $id);
 
                 if ($stmt->execute()) {
                     echo json_encode(['success' => true, 'message' => 'Teacher data updated successfully']);

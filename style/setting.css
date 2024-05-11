@@ -83,7 +83,7 @@ label {
 
 .profilePicture {
   margin-bottom: 1rem;
-  max-height:150px ;
+  max-height: 150px;
 }
 
 .profilePicture img {
@@ -211,7 +211,29 @@ input[type='file'] {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-
-.changePasswordDiv input{
+.changePasswordDiv input {
   width: 200px;
+}
+
+@media only screen and (max-width: 750px) {
+  .names {
+    flex-direction: column;
+  }
+
+  input[type='text'],
+  input[type='password'] {
+    width: 187px;
+  }
+
+  .updateProfilePicture{
+    flex-direction: column;
+  }
+
+  .saveOrLogout{
+    margin: 1rem;
+  }
+
+  .decidingButtons{
+    margin-bottom: 1rem;
+  }
 }

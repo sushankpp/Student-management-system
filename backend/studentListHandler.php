@@ -1,23 +1,7 @@
 <?php
 include('dbConnect.php');
 $total = mysqli_query($connection, 'SELECT COUNT(*) as total FROM student')->fetch_assoc()['total'];
-/*$perPage = 8;
-$pages = ceil($total / $perPage);
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$start = ($page - 1) * $perPage;
-
-$sql = "SELECT * FROM student LIMIT {$start}, {$perPage}";
-$result = mysqli_query($connection, $sql);
-
-$students = [];
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $students[] = $row;
-    }
-} else {
-    $students = "no data found";
-}*/
 
 header('Content-Type: application/json', true, 200);
 
@@ -36,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $department = $_POST['department'];
                 $address = $_POST['address'];
 
-                $sql = "UPDATE student SET first_name = ?, last_name = ?, email = ?, gender = ?, department = ? WHERE ID = ?";
+                $sql = "UPDATE student SET first_name = ?, last_name = ?, email = ?, gender = ?, department = ?, address=?,  WHERE ID = ?";
                 $stmt = $connection->prepare($sql);
 
-                $stmt->bind_param('sssssi', $first_name, $last_name, $email, $gender, $department, $id);
+                $stmt->bind_param('ssssssi', $first_name, $last_name, $email, $gender, $department,$address,  $id);
 
                 if ($stmt->execute()) {
                     echo json_encode(['success' => true, 'message' => 'Student updated successfully']);

@@ -93,6 +93,7 @@ function refreshData() {
                     <td>${student.email}</td>
                     <td>${student.gender}</td>
                     <td>${student.department}</td>
+                    <td style= "display:none;">${student.address}</td>
                 `;
 
           showSidebar(row);
@@ -129,35 +130,51 @@ function loadOnce() {
     .then((response) => response.json())
     .then((data) => {
       if (data.success === true) {
-        if (data.success === true) {
-          console.log(data);
-          let studentTableBody = document.getElementById('student-table-body');
-          // Clear the current table body
-          studentTableBody.innerHTML = '';
-          // Loop through each student in the data
-          data.students.forEach((student) => {
-            // Create a new table row and fill it with the student's data
-            let row = document.createElement('tr');
+        console.log(data);
+        let studentTableBody = document.getElementById('student-table-body');
+
+        // Clear the current table body
+        studentTableBody.innerHTML = '';
+
+        // Loop through each student in the data
+        data.students.forEach((student) => {
+          // Create a new table row and fill it with the student's data
+          let row = document.createElement('tr');
+
+          // Show all data except email on mobile (check for window width)
+          if (window.innerWidth <= 750) {
             row.innerHTML = `
-                        <td>${student.ID}</td>
-                        <td>${student.first_name}</td>
-                        <td>${student.last_name}</td>
-                        <td>${student.email}</td>
-                        <td>${student.gender}</td>
-                        <td>${student.department}</td>
-                    `;
+            <td>${student.ID}</td>
+            <td>${student.first_name}</td>
+            <td>${student.last_name}</td>
+            <td style= "display:none;">${student.email}</td>
+            <td>${student.gender}</td>
+            <td>${student.department}</td>
+            <td style= "display:none;">${student.address}</td>
+              `;
+          } else {
+            row.innerHTML = `
+            <td>${student.ID}</td>
+            <td>${student.first_name}</td>
+            <td>${student.last_name}</td>
+            <td>${student.email}</td>
+            <td>${student.gender}</td>
+            <td>${student.department}</td>
+            <td style= "display:none;">${student.address}</td>
+              `;
+          }
 
-            showSidebar(row);
-            searchStudent(row);
+          showSidebar(row);
+          searchStudent(row);
 
-            // Append the new row to the table body
-            studentTableBody.appendChild(row);
-            totalStudent.innerText = data.totalStudent;
-          });
-        }
+          // Append the new row to the table body
+          studentTableBody.appendChild(row);
+        });
+
+        totalStudent.innerText = data.totalStudent;
       }
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 }
@@ -170,6 +187,7 @@ function showSidebar(row) {
     let email = row.children[3].innerText;
     let gender = row.children[4].innerText;
     let department = row.children[5].innerText;
+    let address = row.children[6].textContent;
 
     let student = {
       ID: id,
@@ -178,13 +196,14 @@ function showSidebar(row) {
       email: email,
       gender: gender,
       department: department,
+      address: address,
     };
 
     console.log(student);
 
     header.classList.add('shrink');
-    navBar.classList.add('shrink');
-    resultsContainer.classList.add('narrow');
+    // navBar.classList.add('shrink');
+    // resultsContainer.classList.add('narrow');
     details.classList.add('show');
 
     document.querySelector('.id').value = student.ID;
@@ -193,6 +212,7 @@ function showSidebar(row) {
     document.querySelector('.Uemail').value = student.email;
     document.querySelector('.sex').value = student.gender;
     document.querySelector('.division').value = student.department;
+    document.querySelector('.location').value = student.address;
   });
 }
 
@@ -313,7 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelector('.nav-items');
 
     // Toggle dark mode for paragraphs and headings
-    navItems.classList.add('navDark')
+    navItems.classList.add('navDark');
 
     // Apply dark mode styles to everything
     table.classList.add('dark-mode');
@@ -321,5 +341,16 @@ window.addEventListener('DOMContentLoaded', () => {
     TableSortResult.classList.add('dark-mode');
     TableSortResultHeader.classList.add('dark-mode');
     TableSortResultHeader2.classList.add('dark-mode');
+  }
+});
+
+const closeBtn = document.querySelector('.closeBtn');
+
+closeBtn.addEventListener('click', () => {
+  if (details.classList.contains('show')) {
+    details.classList.remove('show');
+    header.classList.remove('shrink');
+    navBar.classList.remove('shrink');
+    resultsContainer.classList.remove('narrow');
   }
 });

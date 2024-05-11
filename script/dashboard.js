@@ -33,13 +33,23 @@ function loadData() {
         data.message.forEach((student) => {
           let row = document.createElement('tr');
 
-          row.innerHTML = `
+          if (window.innerWidth <= 768) {
+            row.innerHTML = `
             <td>${student.first_name} ${student.last_name} </td>
             <td>${student.ID}</td>
             <td>${student.department}</td>
             <td>${student.gender}</td>
-            <td>${student.email}</td>
-          `;
+            <td style="display:none;">${student.email}</td>
+            `;
+          } else {
+            row.innerHTML = `
+            <td>${student.first_name} ${student.last_name} </td>
+            <td>${student.ID}</td>
+            <td>${student.department}</td>
+            <td>${student.gender}</td>
+            <td >${student.email}</td>
+            `;
+          }
 
           RecentlyAddedTableBody.appendChild(row);
           count++;

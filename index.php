@@ -42,7 +42,7 @@ include_once ('login.php');
     <div class="join">
         <div class="login">
             <i class='bx bxs-user'></i>
-            <a href="" class="login-with-us loggin">Login</a>
+            <a href="#" class="login-with-us loggin">Login</a>
         </div>
     </div>
     <i class='bx bx-menu hamburger-menu'></i>
