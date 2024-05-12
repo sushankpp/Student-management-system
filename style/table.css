@@ -30,15 +30,6 @@ td {
   transition: all 0.3s linear;
 }
 
-tbody tr {
-  scale: 1;
-  transition: scale 0.2s ease;
-}
-
-tbody tr:hover {
-  scale: 0.98;
-}
-
 tbody > tr {
   border-bottom: 1px solid rgba(35, 50, 85, 1);
 }

@@ -1,3 +1,4 @@
+<?php include ('include/include_session.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +18,8 @@
 </head>
 
 <body>
+
+    <?php //print_r($_SESSION) ?>
     <div class="loading-container" id="loading-container">
         <div class="loading-screen"></div>
     </div>
@@ -98,6 +101,8 @@
                     <thead>
 
                         <tr>
+                            <th><input type="checkbox" name="attendanceCheckbox" 
+                                    class="attendanceCheckbox"></th>
                             <th>Student ID</th>
                             <th>first name</th>
                             <th>last name</th>
@@ -116,6 +121,7 @@
                     <button id="prevPageBtn" class="btn prevBtn" disabled>Previous</button>
                     <span id="currentPage">1</span>
                     <button id="nextPageBtn" class="btn nextBtn">Next</button>
+                    <button name="sendAttendance" id="sendAttendance" class="sendAttendance btn">Present</button>
                 </div>
             </div>
         </main>
@@ -166,9 +172,16 @@
                         <span class="value">student</span>
                     </div>
 
-                    <button type="button" value="edit" name="edit" id="edit_student" class="edit btn">edit</button>
-                    <button type="button" value="delete" name="delete" id="delete_student"
-                        class="delete btn">delete</button>
+                    <button type="button" value="edit" name="edit" id="edit_student" class="edit btn" <?php
+                    if (!isset($_SESSION['admin'])) {
+                        echo 'disabled';
+                    } ?>>edit</button>
+                    <button type="button" value="delete" name="delete" id="delete_student" class="delete btn" <?php
+                    if (!isset($_SESSION['admin'])) {
+                        echo 'disabled';
+                    } ?>>delete</button>
+
+
                 </div>
             </section>
         </form>

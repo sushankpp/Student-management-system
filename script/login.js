@@ -18,6 +18,8 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
       console.log(data)
       if (data.success === true) {
         showNotification('success', 'toast-top-right', data.message);
+
+        window.location.href = 'dashboard.php';
       } else {
         showNotification('error', 'toast-top-right', data.message);
       }

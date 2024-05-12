@@ -1,3 +1,5 @@
+console.log('Setting page script loaded');
+
 // Get the file input element
 const fileInput = document.getElementById('photoUploader');
 
@@ -34,4 +36,19 @@ deleteButton.addEventListener('click', () => {
 
   // Clear the file input value to remove the selected file
   fileInput.value = '';
+});
+
+logoutButton = document.getElementById('logoutuser');
+logoutButton.addEventListener('click', () => {
+  console.log('Logout button clicked');
+  fetch('logout.php', {
+    method: 'POST',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.status === 'success') {
+        window.location.href = 'index.php';
+      }
+    });
 });

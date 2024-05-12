@@ -180,7 +180,6 @@ i {
 .value {
   color: rgba(35, 50, 85, 1);
   font-size: 15px;
-  text-transform: uppercase;
   padding: 0 0 0.3rem 0;
   background-color: inherit;
   border: none;
@@ -200,6 +199,7 @@ i {
   text-transform: uppercase;
   background-color: #fff;
   transition: all 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
 .edit {
@@ -259,9 +259,20 @@ i {
   margin: 0.5rem;
 }
 
+.sendAttendance {
+  display: none;
+  background-color: rgb(67, 169, 203);
+  color: #fff;
+  margin: 0;
+}
+
+.closeBtn {
+  translate: 200px -80px;
+}
+
 @media only screen and (max-width: 750px) {
-  .results-container{
-    margin: 0 1rem ;
+  .results-container {
+    margin: 0 1rem;
   }
   .sort-the-result {
     flex-direction: column;
@@ -276,8 +287,7 @@ i {
     width: 80%;
   }
 
-  .btn{
+  .btn {
     width: 20vw;
   }
-
 }

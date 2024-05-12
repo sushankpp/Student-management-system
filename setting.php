@@ -1,3 +1,7 @@
+<?php
+include 'include/include_session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,14 +75,14 @@
                                 <div class="first">
 
                                     <label for="First Name" class="name fname">First Name</label>
-                                    <input type="text" name="First-name" id="fname" class="editName" value="Sushank"
+                                    <input type="text" name="First-name" id="fname" class="editName" value="<?php echo $_SESSION['first_name']; ?>"
                                         disabled>
                                 </div>
 
                                 <div class="">
 
                                     <label for="Last Name" class="name lname">Last Name</label>
-                                    <input type="text" name="Last-name" id="lname" class="editName" value="Pandey"
+                                    <input type="text" name="Last-name" id="lname" class="editName" value="<?php echo $_SESSION['last_name']; ?>"
                                         disabled>
                                 </div>
                             </div>
@@ -152,7 +156,7 @@
 
                 </div>
                 <section class="saveOrLogout">
-                    <button class="button logoutBtn">LogOut</button>
+                    <button class="button logoutBtn" id="logoutuser">LogOut</button>
                     <button class="button EditBtn">Edit</button>
                 </section>
             </div>

@@ -86,6 +86,21 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
                 echo json_encode(['success' => true, 'students' => $students, 'totalStudent' => count($students)]);
                 break;
+
+            case 'increaseAttendance':
+                // Increase attendance for selected students
+                $checkedIds = $_POST['checkedIds']; // Assuming this is sent from the front end
+                if (!is_array($checkedIds)) {
+                    $checkedIds = explode(',', $checkedIds); // Convert string to array
+                }
+                $sql = "UPDATE student SET attendance = attendance + 1 WHERE ID IN (" . implode(",", $checkedIds) . ")";
+                if ($connection->query($sql)) {
+                    echo json_encode(['success' => true, 'message' => 'Attendance updated successfully']);
+                } else {
+                    echo json_encode(['success' => false, 'message' => 'Error: ' . $connection->error]);
+                }
+                break;
+
         }
     }
 }

@@ -112,9 +112,13 @@
                     </div>
 
 
-                    <section class="graph" id="graph">
+                    <!-- <section class="graph" id="graph">
                         <p>garph will come here</p>
-                    </section>
+                    </section> -->
+
+                    
+                    <canvas id="graph" class="graph" style="width:100%;max-width:700px"></canvas>
+
 
                     <section class="recently-added">
                         <div class="top">
@@ -176,6 +180,7 @@
             </div>
         </main>
     </div>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
     <script src="script/loadingScreen.js" defer></script>
     <script type="module" src="script/home.js" defer></script>
     <script trpe="module" src="script/dashboard.js" defer></script>

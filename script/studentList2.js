@@ -30,7 +30,7 @@ genderSelect.addEventListener('change', (event) => {
 // if the value of department is changed, refresh the data
 departmentSelect.addEventListener('change', (event) => {
   selectedDepartment = event.target.value;
-  console.log(selectedDepartment);
+  // console.log(selectedDepartment);
 });
 
 // Calling the function to refresh the data
@@ -74,8 +74,8 @@ function refreshData() {
     .then((response) => response.json())
     .then((data) => {
       // Check if the request was successful
-      if (data.success) {
-        console.log(data);
+      if (data.success === true) {
+        // console.log(data);
         // Get the student table body element
         let studentTableBody = document.getElementById('student-table-body');
 
@@ -87,6 +87,7 @@ function refreshData() {
           // Create a new table row and fill it with the student's data
           let row = document.createElement('tr');
           row.innerHTML = `
+          <td><input type="checkbox" class="attendanceCheckbox" id=${student.ID}></td>
                     <td>${student.ID}</td>
                     <td>${student.first_name}</td>
                     <td>${student.last_name}</td>
@@ -98,6 +99,12 @@ function refreshData() {
 
           showSidebar(row);
           searchStudent(row);
+
+          const checkbox = row.querySelector('td input[type="checkbox"]');
+          if (checkbox) {
+            checkbox.checked = attendanceCheckbox.checked;
+          }
+
           // Append the new row to the table body
           studentTableBody.appendChild(row);
           totalStudent.innerText = data.totalStudent;
@@ -115,13 +122,15 @@ function refreshData() {
     });
 }
 
+refreshData();
+
 function loadOnce() {
   console.log('loaded once');
   let formData = new FormData();
   formData.append('gender', '');
   formData.append('department', '');
   formData.append('action', 'showStudents');
-  console.log(formData);
+  // console.log(formData);
 
   fetch('backend/studentListHandler.php', {
     method: 'POST',
@@ -130,42 +139,42 @@ function loadOnce() {
     .then((response) => response.json())
     .then((data) => {
       if (data.success === true) {
-        console.log(data);
+        // console.log(data);
         let studentTableBody = document.getElementById('student-table-body');
 
         // Clear the current table body
         studentTableBody.innerHTML = '';
 
-        console.log(data.totalStudent);
-        console.log(data.maleCount);
-        console.log(data.femaleCount);
+        // console.log(data.totalStudent);
         // Loop through each student in the data
         data.students.forEach((student) => {
           // Create a new table row and fill it with the student's data
           let row = document.createElement('tr');
 
           // Show all data except email on mobile (check for window width)
-          if (window.innerWidth <= 750) {
+          // if (window.innerWidth >= 750) {
+          row.innerHTML = `
+                <td><input type="checkbox" class="attendanceCheckbox" id=${student.ID}></td>
+                <td>${student.ID}</td>
+                <td>${student.first_name}</td>
+                <td>${student.last_name}</td>
+                <td>${student.email}</td>
+                <td>${student.gender}</td>
+                <td>${student.department}</td>
+                <td style="display:none;">${student.address}</td>
+            `;
+          /* } else {
             row.innerHTML = `
-            <td>${student.ID}</td>
-            <td>${student.first_name}</td>
-            <td>${student.last_name}</td>
-            <td style= "display:none;">${student.email}</td>
-            <td>${student.gender}</td>
-            <td>${student.department}</td>
-            <td style= "display:none;">${student.address}</td>
-              `;
-          } else {
-            row.innerHTML = `
-            <td>${student.ID}</td>
-            <td>${student.first_name}</td>
-            <td>${student.last_name}</td>
-            <td>${student.email}</td>
-            <td>${student.gender}</td>
-            <td>${student.department}</td>
-            <td style= "display:none;">${student.address}</td>
-              `;
-          }
+            <td><input type="checkbox"></td>
+                <td>${student.ID}</td>
+                <td>${student.first_name}</td>
+                <td>${student.last_name}</td>
+                <td>${student.email}</td>
+                <td>${student.gender}</td>
+                <td>${student.department}</td>
+                <td style="display:none;">${student.address}</td>
+            `;
+          } */
 
           showSidebar(row);
           searchStudent(row);
@@ -184,13 +193,13 @@ function loadOnce() {
 
 function showSidebar(row) {
   row.addEventListener('click', () => {
-    let id = row.children[0].innerText;
-    let fname = row.children[1].innerText;
-    let lname = row.children[2].innerText;
-    let email = row.children[3].innerText;
-    let gender = row.children[4].innerText;
-    let department = row.children[5].innerText;
-    let address = row.children[6].textContent;
+    let id = row.children[1].innerText;
+    let fname = row.children[2].innerText;
+    let lname = row.children[3].innerText;
+    let email = row.children[4].innerText;
+    let gender = row.children[5].innerText;
+    let department = row.children[6].innerText;
+    let address = row.children[7].textContent;
 
     let student = {
       ID: id,
@@ -202,7 +211,7 @@ function showSidebar(row) {
       address: address,
     };
 
-    console.log(student);
+    // console.log(student);
 
     header.classList.add('shrink');
     // navBar.classList.add('shrink');
@@ -235,7 +244,7 @@ editBtn.addEventListener('click', (event) => {
 
     formInputs.forEach((input) => (input.disabled = false));
     document.getElementById('dont-edit-id').disabled = true;
-    console.log(inputToFocus);
+    // console.log(inputToFocus);
     inputToFocus.focus();
   } else {
     // Save functionality
@@ -245,7 +254,7 @@ editBtn.addEventListener('click', (event) => {
       formData.append(input.name, input.value);
     });
     formData.append('action', 'edit');
-    console.log(formData);
+    // console.log(formData);
 
     fetch('backend/studentListHandler.php', {
       method: 'POST',
@@ -257,11 +266,12 @@ editBtn.addEventListener('click', (event) => {
           showNotification('success', 'toast-top-right', data.message);
           refreshData();
         } else {
-          console.log(data.message);
+          // console.log(data.message);
+          showNotification('error', 'toast-top-right', data.message);
         }
       })
       .catch((error) => {
-        showNotification('error', 'toast-top-right', data.message);
+        // showNotification('error', 'toast-top-right', data.message);
       });
 
     editBtn.innerHTML = 'Edit';
@@ -283,7 +293,7 @@ deleteBtn.addEventListener('click', () => {
   });
   formData.append('action', 'delete');
 
-  console.log(formData);
+  // console.log(formData);
 
   fetch('backend/studentListHandler.php', {
     method: 'POST',
@@ -308,9 +318,9 @@ function searchStudent(row) {
 
   input.addEventListener('input', () => {
     const searchTerm = input.value.toLowerCase();
-    const firstName = row.children[1].innerText.toLowerCase();
-    const lastName = row.children[2].innerText.toLowerCase();
-    const email = row.children[3].innerText.toLowerCase();
+    const firstName = row.children[2].innerText.toLowerCase();
+    const lastName = row.children[3].innerText.toLowerCase();
+    const email = row.children[4].innerText.toLowerCase();
 
     if (
       firstName.includes(searchTerm) ||
@@ -357,3 +367,86 @@ closeBtn.addEventListener('click', () => {
     resultsContainer.classList.remove('narrow');
   }
 });
+
+const attendanceCheckbox = document.querySelector('.attendanceCheckbox');
+
+attendanceCheckbox.addEventListener('change', (event) => {
+  const table = document.querySelector('table');
+  const allCheckboxes = table.querySelectorAll('td input[type="checkbox"]');
+
+  allCheckboxes.forEach((checkbox) => {
+    checkbox.checked = event.target.checked;
+  });
+  sendAttendance();
+});
+
+const attendanceBtn = document.getElementById('sendAttendance');
+
+function sendAttendance() {
+  if (attendanceCheckbox.checked) {
+    attendanceBtn.style.display = 'block';
+  }
+}
+
+function checkAttendanceSelection() {
+  const table = document.querySelector('table');
+  const allCheckboxes = table.querySelectorAll('td input[type="checkbox"]');
+
+  // Check if any checkbox (including header and rows) is checked
+  let anyCheckboxChecked =
+    attendanceCheckbox.checked ||
+    Array.from(allCheckboxes).some((checkbox) => checkbox.checked);
+
+  attendanceBtn.style.display = anyCheckboxChecked ? 'block' : 'none';
+}
+
+// Event listeners for checkbox changes
+attendanceCheckbox.addEventListener('change', checkAttendanceSelection);
+
+// Add an event listener for each checkbox in the table body
+attendanceCheckbox.addEventListener('change', refreshData);
+
+// Call checkAttendanceSelection initially to set button visibility based on initial state
+checkAttendanceSelection();
+
+function increaseAttendance(ids) {
+  console.log('ids:', ids);
+  let formData = new FormData();
+
+  console.log(ids);
+  formData.append('action', 'increaseAttendance');
+  formData.append('checkedIds', ids);
+
+  fetch('backend/studentListHandler.php', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+document
+  .getElementById('sendAttendance')
+  .addEventListener('click', function () {
+    // Select all checkboxes
+    var checkboxes = document.querySelectorAll('.attendanceCheckbox');
+    var checkedIds = [];
+
+    // Iterate over all checkboxes and check if they are checked
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        if (checkbox.id !== "") {
+          checkedIds.push(checkbox.id);
+        }
+      }
+    });
+
+    increaseAttendance(checkedIds);
+
+    console.log('Checked student IDs:', checkedIds);
+  });

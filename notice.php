@@ -1,3 +1,5 @@
+<?php include ('include/include_session.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +60,11 @@
 
                     </div>
 
-                    <button class="compose-notice-button"><i class="fa-regular fa-pen-line"></i>Compose</button>
+                    <button class="compose-notice-button" <?php 
+                    if (!isset($_SESSION['admin'])){
+                        echo 'disabled';
+                    } ?>
+                    ><i class="fa-regular fa-pen-line"></i>Compose</button>
 
                     <dialog class="container">
                         <i class="fa-solid fa-x closePopUp"></i>
