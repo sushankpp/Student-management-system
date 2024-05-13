@@ -101,8 +101,7 @@
                     <thead>
 
                         <tr>
-                            <th><input type="checkbox" name="attendanceCheckbox" 
-                                    class="attendanceCheckbox"></th>
+                            <th><input type="checkbox" name="attendanceCheckbox" class="attendanceCheckbox"></th>
                             <th>Student ID</th>
                             <th>first name</th>
                             <th>last name</th>
@@ -121,7 +120,8 @@
                     <button id="prevPageBtn" class="btn prevBtn" disabled>Previous</button>
                     <span id="currentPage">1</span>
                     <button id="nextPageBtn" class="btn nextBtn">Next</button>
-                    <button name="sendAttendance" id="sendAttendance" class="sendAttendance btn">Present</button>
+                    <button name="sendAttendance" id="sendAttendance" class="sendAttendance btn"
+                        onClick="window.location.href=window.location.href">Present</button>
                 </div>
             </div>
         </main>

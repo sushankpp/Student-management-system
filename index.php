@@ -23,7 +23,7 @@ include_once ('login.php');
 
 <body>
 <video autoplay loop muted plays-inline class="play-back-video">
-    <source src="internals/videos/st.lawrence-video.mp4" type="video/mp4">
+    <source src="internals/videos/st.lawrence.video.mp4" type="video/mp4">
 </video>
 <!-- header-section -->
 <nav class="header">
