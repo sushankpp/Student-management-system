@@ -1,165 +1,145 @@
-<?php include ('include/include_session.php') ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'include/include_HTMLheader.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="internals/images/st-lawrence-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="style/studentList_sidebar.css">
-    <link rel="stylesheet" href="style/loadingScreen.css">
-    <link rel="stylesheet" href="style/student_list.css">
-    <link rel="stylesheet" href="style/table.css">
-
-    <?php include ('include/include_toasterNotification.php') ?>
-
-    <title>Teacher List</title>
-</head>
-
-<body>
-    <div class="loading-container" id="loading-container">
-        <div class="loading-screen"></div>
-    </div>
-    <div class="content" id="content">
-        <header class="header">
-            <img src="internals/images/st-lawrence-logo.png" alt="college logo" class="logo">
-
-            <div class="current-page-name">
-                <p class="location">Administration/ <span class="exact-location">Teachers List</span></p>
-            </div>
-
-            <i class="fa-solid fa-bars hamMenu"></i>
-        </header>
+<title>Teacher List</title>
 
 
-        <main class="main-content-container">
 
-            <div class=" vertical-nav-bar ">
-                <ul class="nav-items">
+<div class="loading-container" id="loading-container">
+    <div class="loading-screen"></div>
+</div>
+<div class="content" id="content">
+    <header class="header">
+        <img src="internals/images/st-lawrence-logo.png" alt="college logo" class="logo">
 
-                    <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
-                    </li>
-                    <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
-                    </li>
-                    <li><a href="teacherList.php"><i
-                                class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a></li>
-                    <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
-                    <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
-                    <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
-                                Fee</span></a></li>
-                    <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+        <div class="current-page-name">
+            <p class="location">Administration/ <span class="exact-location">Teachers List</span></p>
+        </div>
 
-                </ul>
-            </div>
+        <i class="fa-solid fa-bars hamMenu"></i>
+    </header>
 
-            <div class="results-container">
-                <div class="sort-the-result">
-                    <div class="input-search">
-                        <input type="search" name="search" id="search" class="search">
-                        <i class="fa-regular fa-magnifying-glass search-icon"></i>
-                    </div>
 
-                    <div class="sortings">
-                        <select name="gender-select" id="gender-select" class="gender-select">
-                            <option value="Gender" disabled selected>Gender</option>
-                            <option value="All">All</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
+    <main class="main-content-container">
 
-                        <select id="department-select" name="department-select" class="department-select">
-                            <option value="Department" disabled selected>Department</option>
-                            <option value="All">All</option>
-                            <option value="BCA">BCA</option>
-                            <option value="CSIT">CSIT</option>
-                        </select>
-                    </div>
+        <div class=" vertical-nav-bar ">
+            <ul class="nav-items">
+
+                <li><a href="dashboard.php"><i class="fa-solid fa-objects-column"></i><span>Dashboard</span></a>
+                </li>
+                <li><a href="studentList.php"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
+                </li>
+                <li><a href="teacherList.php"><i class="fa-duotone fa-person-chalkboard"></i><span>Teachers</span></a>
+                </li>
+                <li><a href="course.php"><i class="fa-duotone fa-book"></i><span>Courses</span></a></li>
+                <li><a href="notice.php"><i class="fa-regular fa-messages"></i><span>Notices</span></a></li>
+                <li><a href="semesterFee.php"><i class="fa-solid fa-money-check-dollar"></i><span>Semester
+                            Fee</span></a></li>
+                <li><a href="setting.php"><i class="fa-duotone fa-gear"></i><span>Settings</span></a></li>
+
+            </ul>
+        </div>
+
+        <div class="results-container">
+            <div class="sort-the-result">
+                <div class="input-search">
+                    <input type="search" name="search" id="search" class="search">
+                    <i class="fa-regular fa-magnifying-glass search-icon"></i>
                 </div>
-                <table class="result-table">
-                    <thead>
 
-                        <tr>
-                            <th>Teacher ID</th>
-                            <th>first name</th>
-                            <th>last name</th>
-                            <th>email</th>
-                            <th>gender</th>
-                            <th>Department</th>
-                        </tr>
-                    </thead>
+                <div class="sortings">
+                    <select name="gender-select" id="gender-select" class="gender-select">
+                        <option value="Gender" disabled selected>Gender</option>
+                        <option value="All">All</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
 
-                    <tbody id="teacher-table-body">
-                        <tr>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-
-        <form method="post" action="" id="teachersDetailForm">
-            <section class="details">
-                <div class="studentDetails">
-                    <h2>Student Details</h2>
-                    <i class="fa-solid fa-times closeBtn"></i>
-
-                    <div class="ref-id-div">
-                        <p class="ref-id">ref id</p>
-                        <input type="text" id="dont-edit-id" name="id" class="value id" value="" disabled>
-                    </div>
-
-                    <div class="fName">
-                        <p class="first-name">first name</p>
-                        <input type="text" class="value firstN" name="first_name" id="first_name" value="" disabled>
-                    </div>
-
-                    <div class="lName">
-                        <p class="last-name">last name</p>
-                        <input type="text" class="value lastN" name="last_name" value="" disabled>
-                    </div>
-
-                    <div class="gender-div">
-                        <p class="fgender">gender</p>
-                        <input type="text" class="value sex" name="gender" value="" disabled>
-                    </div>
-
-                    <div class="email-div">
-                        <p class="email">email</p>
-                        <input type="email" class="value Uemail" name="email" value="" disabled>
-                    </div>
-
-                    <div class="address-div">
-                        <p class="address">address</p>
-                        <input type="text" class="value location" name="address" value="" disabled>
-                    </div>
-
-                    <div class="department-div">
-                        <p class="department">department</p>
-                        <input type="text" class="value division" name="department" value="" disabled>
-                    </div>
-
-                    <div class="stauts-div">
-                        <p class="current-status">current status</p>
-                        <span class="value">Teacher</span>
-                    </div>
-
-                    <button type="button" value="edit" name="edit" id="edit_student" class="edit btn" <?php 
-                    if (!isset($_SESSION['admin'])){
-                        echo 'disabled';
-                    } ?>
-                    >edit</button>
-                    <button type="button" value="delete" name="delete" id="delete_student"
-                        class="delete btn" <?php 
-                    if (!isset($_SESSION['admin'])){
-                        echo 'disabled';
-                    } ?>
-                    >delete</button>
+                    <select id="department-select" name="department-select" class="department-select">
+                        <option value="Department" disabled selected>Department</option>
+                        <option value="All">All</option>
+                        <option value="BCA">BCA</option>
+                        <option value="CSIT">CSIT</option>
+                    </select>
                 </div>
-            </section>
-        </form>
-    </div>
-    <script type="module" src="script/teacherList.js" defer></script>
-    <script src="script/loadingScreen.js" defer></script>
-</body>
+            </div>
+            <table class="result-table">
+                <thead>
 
-</html>
+                    <tr>
+                        <th>Teacher ID</th>
+                        <th>first name</th>
+                        <th>last name</th>
+                        <th>email</th>
+                        <th>gender</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+
+                <tbody id="teacher-table-body">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <form method="post" action="" id="teachersDetailForm">
+        <section class="details">
+            <div class="studentDetails">
+                <h2>Student Details</h2>
+                <i class="fa-solid fa-times closeBtn"></i>
+
+                <div class="ref-id-div">
+                    <p class="ref-id">ref id</p>
+                    <input type="text" id="dont-edit-id" name="id" class="value id" value="" disabled>
+                </div>
+
+                <div class="fName">
+                    <p class="first-name">first name</p>
+                    <input type="text" class="value firstN" name="first_name" id="first_name" value="" disabled>
+                </div>
+
+                <div class="lName">
+                    <p class="last-name">last name</p>
+                    <input type="text" class="value lastN" name="last_name" value="" disabled>
+                </div>
+
+                <div class="gender-div">
+                    <p class="fgender">gender</p>
+                    <input type="text" class="value sex" name="gender" value="" disabled>
+                </div>
+
+                <div class="email-div">
+                    <p class="email">email</p>
+                    <input type="email" class="value Uemail" name="email" value="" disabled>
+                </div>
+
+                <div class="address-div">
+                    <p class="address">address</p>
+                    <input type="text" class="value location" name="address" value="" disabled>
+                </div>
+
+                <div class="department-div">
+                    <p class="department">department</p>
+                    <input type="text" class="value division" name="department" value="" disabled>
+                </div>
+
+                <div class="stauts-div">
+                    <p class="current-status">current status</p>
+                    <span class="value">Teacher</span>
+                </div>
+
+                <button type="button" value="edit" name="edit" id="edit_student" class="edit btn" <?php
+                if (!isset($_SESSION['admin'])) {
+                    echo 'disabled';
+                } ?>>edit</button>
+                <button type="button" value="delete" name="delete" id="delete_student" class="deleteBtn btn" <?php
+                if (!isset($_SESSION['admin'])) {
+                    echo 'disabled';
+                } ?>>delete</button>
+            </div>
+        </section>
+    </form>
+</div>
+<script type="module" src="script/teacherList.js" defer></script>
+<script src="script/loadingScreen.js" defer></script>

@@ -133,7 +133,7 @@ const highlighterRemover = (className) => {
 
 window.onload = () => {
   initializer();
-  loadFromLocalStorage();
+  // loadFromLocalStorage();
 };
 
 // writingArea.addEventListener('input', saveContentToLocalStorage);

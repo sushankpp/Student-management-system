@@ -33,7 +33,7 @@ dialog::backdrop {
   gap: 13px;
 }
 
-button {
+.container button {
   cursor: pointer;
   height: 28px;
   width: 28px;
@@ -107,7 +107,7 @@ span {
   font-weight: 500;
 }
 
-.sendButton {
+#sendButton {
   height: 36px;
   padding: 0 1rem;
   width: 80px;

@@ -108,6 +108,7 @@ a {
 }
 
 .recently-added {
+  display: none;
   margin-top: 2rem;
 
   height: 230px;

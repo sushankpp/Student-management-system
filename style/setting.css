@@ -43,7 +43,7 @@ h1 {
   border-right: 1px solid #dee2e6;
 }
 
-input {
+.change {
   display: block;
   margin: 0.5rem 0 1rem 0;
 }
@@ -51,9 +51,7 @@ input {
 .names {
   display: flex;
 }
-
-input[type='text'],
-input[type='password'] {
+.change {
   width: 20dvh;
   height: 30px;
   padding: 1rem;
@@ -93,7 +91,7 @@ label {
   border-radius: 50%;
 }
 
-.button {
+.btnn {
   width: 150px;
   height: 35px;
   font-family: inherit;
@@ -220,20 +218,19 @@ input[type='file'] {
     flex-direction: column;
   }
 
-  input[type='text'],
-  input[type='password'] {
+  .change {
     width: 187px;
   }
 
-  .updateProfilePicture{
+  .updateProfilePicture {
     flex-direction: column;
   }
 
-  .saveOrLogout{
+  .saveOrLogout {
     margin: 1rem;
   }
 
-  .decidingButtons{
+  .decidingButtons {
     margin-bottom: 1rem;
   }
 }

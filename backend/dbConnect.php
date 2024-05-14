@@ -1,10 +1,6 @@
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'sms';
-// $encoding = 'utf8mb4';
+
 
 // try {
 //     $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
@@ -13,5 +9,22 @@ $database = 'sms';
 //     $output = 'An exception have occurred with ' . $exception->getMessage(). 'in line number ' . $exception->getLine();
 // }
 
+function db_connect() {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "sms";
 
-$connection = mysqli_connect($servername, $username, $password, $database);
+    // Create connection
+    $connection = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+
+    return $connection;
+}
+
+
+?>

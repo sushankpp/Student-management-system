@@ -39,7 +39,7 @@ sendBtn.addEventListener('click', () => {
   dialogPopup.classList.remove('show');
 
   // Send the notice data using sendNotice function (assuming it's defined)
-  sendNotice()
+  sendNotice();
 });
 
 function sendNotice() {
@@ -100,7 +100,7 @@ function getNotice() {
 
           noticeBody.innerHTML = `
             <div class="notice-title">
-              <h2>${notice.Title}</h2>
+              ${notice.Title}
             </div>
             <div class="notice-content">
               <p class="content-text">${notice.BodyText}</p>
