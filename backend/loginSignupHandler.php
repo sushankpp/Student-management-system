@@ -53,11 +53,10 @@ class UserHandler
 
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
-                if ($password == $user['password']) {
+                if (password_verify($password, $user['password'])) {
                     $_SESSION['first_name'] = $user['first_name'];
                     $_SESSION['last_name'] = $user['last_name'];
                     $_SESSION['email'] = $user['email'];
-                    $_SESSION['password'] = $user['password'];
                     $_SESSION['role'] = 'student';
 
                     echo json_encode(['success' => true, 'message' => 'Login Successful']);
@@ -76,12 +75,9 @@ class UserHandler
 
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
-                if ($password == $user['adminPassword']) {
+                if (password_verify($password, $user['adminPassword'])) {
                     $_SESSION['adminId'] = $user['adminId'];
                     $_SESSION['adminEmail'] = $user['adminEmail'];
-                    $_SESSION['adminPassword'] = $user['adminPassword'];
-                    $_SESSION['first_name'] = $user['first_name'];
-                    $_SESSION['last_name'] = $user['last_name'];
                     $_SESSION['role'] = 'admin';
 
                     echo json_encode(['success' => true, 'message' => 'Login Successful']);
@@ -100,22 +96,30 @@ class UserHandler
 
     }
 
-
-
-
     private function register()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $first_name = $_POST["first-name"];
-            $last_name = $_POST['last-name'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $Conpassword = $_POST['Confrim-password'];
-            $phoneNum = $_POST['phone-number'];
+            $first_name = trim($_POST["first-name"]);
+            $last_name = trim($_POST['last-name']);
+            $email = trim($_POST['email']);
+            $password = trim($_POST['password']);
+            $passwordConfirm = $_POST['confirm-password'];
+            $phoneNum = trim($_POST['phone-number']);
             $gender = isset($_POST['male']) ? 'Male' : (isset($_POST['female']) ? 'Female' : '');
             $department = isset($_POST['department']) ? $_POST['department'] : '';
 
-            if ($password != $Conpassword) {
+            // Validate input fields
+            if (empty($first_name) || empty($last_name) || empty($email) || empty($password) || empty($passwordConfirm) || empty($phoneNum) || empty($gender) || empty($department)) {
+                echo json_encode(['success' => false, 'message' => 'All fields are required']);
+                return;
+            }
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo json_encode(['success' => false, 'message' => 'Invalid email format']);
+                return;
+            }
+
+            if ($password != $passwordConfirm) {
                 echo json_encode(['success' => false, 'message' => 'Password does not match']);
                 return;
             }
@@ -131,9 +135,11 @@ class UserHandler
                     return;
                 }
 
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
                 $stmt = $this->connection->prepare("INSERT INTO student (first_name, last_name, email, password, phone_number, gender, department)
                 VALUES (?, ?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssssss", $first_name, $last_name, $email, $password, $phoneNum, $gender, $department);
+                $stmt->bind_param("sssssss", $first_name, $last_name, $email, $hashed_password, $phoneNum, $gender, $department);
 
                 if ($stmt->execute()) {
                     echo json_encode(['success' => true, 'message' => 'New record created successfully']);
