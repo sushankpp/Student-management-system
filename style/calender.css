@@ -1,5 +1,6 @@
 .wrapper {
   width: 450px;
+  height: 325px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
@@ -46,7 +47,7 @@ header .current-date {
 }
 
 .calendar {
-  padding: 20px;
+  padding: 10px;
 }
 
 .calendar ul {

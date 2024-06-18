@@ -24,8 +24,40 @@ class DataHandler
                     case 'showTeachers':
                         $this->showTeachers();
                         break;
+
+                    case 'registerStudent':
+                        $this->registerStudent($this->db);
+                        break;
                 }
             }
+        }
+    }
+
+    private function registerStudent($conn)
+    {
+        $firstName = $_POST['fName'];
+        $lastName = $_POST['lName'];
+        $email = $_POST['email'];
+        $gender = $_POST['gender'];
+        $phone = $_POST['phoneNumber'];
+        $department = $_POST['department'];
+        $address = $_POST['address'];
+
+
+        $sql = "INSERT INTO student(first_name , last_name , email, gender, phone_number, department, address) VALUES(?,?,?,?,?,?,?)";
+
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("sssssss", $firstName, $lastName, $email, $gender, $phone, $department, $address);
+
+            if ($stmt->execute()) {
+                echo json_encode(['success' => true, 'message' => 'Student registered successfully']);
+            } else {
+                echo json_encode(['success' => false, 'message' => 'Error: ' . $stmt->error]);
+            }
+
+            $stmt->close();
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Error: ' . $conn->error]);
         }
     }
 

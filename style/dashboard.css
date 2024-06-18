@@ -18,6 +18,12 @@ a {
   border-radius: 10px;
 }
 
+button,
+.create_user,
+.closePopUp {
+  cursor: pointer;
+}
+
 .results-container {
   margin-top: 1rem;
   display: flex;
@@ -124,6 +130,11 @@ a {
   justify-content: space-between;
 }
 
+.disabled-div {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 h2 {
   color: rgba(35, 50, 85, 0.8);
   font-size: 20px;
@@ -225,17 +236,76 @@ td {
 }
 
 #maleCount,
-#maleC{
+#maleC {
   color: #0b7979;
   font-size: 13px;
   font-weight: bold;
 }
 
 #femaleCount,
-#femaleC{
-  color:#f57a16;
+#femaleC {
+  color: #f57a16;
   font-size: 13px;
-  font-weight: bold ;
+  font-weight: bold;
+}
+
+dialog {
+  margin: auto;
+  width: 500px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+label {
+  font-size: 13px;
+}
+
+.form-control {
+  padding: 0.5rem 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: none;
+  border-bottom: 1px solid #0b7979;
+  width: 80%;
+}
+
+input[type='text'],
+input[type='number']:focus {
+  outline: none;
+}
+
+.create {
+  background-color: #0b7979;
+  border: none;
+  color: #fff;
+}
+
+.create_user > i {
+  color: #fff;
+}
+
+.register {
+  background-color: #0b7979;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.create_user {
+  background-color: #0b7979;
+
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -354,6 +424,4 @@ td {
     padding: 0 1rem;
     box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.1);
   }
-
-  
 }

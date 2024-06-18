@@ -53,7 +53,7 @@ class UserHandler
 
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
-                if (password_verify($password, $user['password'])) {
+                if ($password == $user['password']) {
                     $_SESSION['first_name'] = $user['first_name'];
                     $_SESSION['last_name'] = $user['last_name'];
                     $_SESSION['email'] = $user['email'];
@@ -75,9 +75,11 @@ class UserHandler
 
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
-                if (password_verify($password, $user['adminPassword'])) {
+                if ($password == $user['adminPassword']) {
                     $_SESSION['adminId'] = $user['adminId'];
                     $_SESSION['adminEmail'] = $user['adminEmail'];
+                    $_SESSION['first_name'] = $user['first_name'];
+                    $_SESSION['last_name'] = $user['last_name'];
                     $_SESSION['role'] = 'admin';
 
                     echo json_encode(['success' => true, 'message' => 'Login Successful']);

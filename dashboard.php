@@ -1,3 +1,6 @@
+<?php include 'include/include_session.php' ;?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="internals/images/st-lawrence-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="style/loadingScreen.css">
+    <!-- <link rel="stylesheet" href="style/loadingScreen.css"> -->
     <link rel="stylesheet" href="style/studentList_sidebar.css">
     <link rel="stylesheet" href="style/student_list.css">
     <link rel="stylesheet" href="style/dashboard.css">
@@ -29,6 +32,16 @@
 
 
             <img src="internals/images/st-lawrence-logo.png" alt="college logo" class="logo">
+
+
+            <div class="create_user <?php if (!(isset($_SESSION['role']) && $_SESSION['role'] == 'admin')) {
+                echo 'disabled-div';
+            } ?>">
+                <i class="fa-solid fa-user-plus"></i>
+                <button id="create" class="create" <?php if (!(isset($_SESSION['role']) && $_SESSION['role'] == 'admin')) {
+                    echo 'disabled';
+                } ?>>Create User</button>
+            </div>
 
             <div class="current-page-name">
                 <p class="location">Administration/ <span class="exact-location">Dashboard</span></p>
@@ -112,12 +125,7 @@
                     </div>
 
 
-                    <!-- <section class="graph" id="graph">
-                        <p>garph will come here</p>
-                    </section> -->
-
-                    
-                    <canvas id="graph" class="graph" style="width:100%;max-width:700px"></canvas>
+                    <canvas id="graph" class="graph" style="width:100%;max-width:900px"></canvas>
 
 
                     <section class="recently-added">
@@ -178,13 +186,56 @@
                     </div>
                 </div>
             </div>
+
+            <dialog>
+                <form action="" method="post">
+                    <i class="fa-solid fa-x closePopUp"></i>
+                    <div class="form-control">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name" id="fName">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name="last_name" id="lName">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Gender</label>
+                        <input type="text" name="gender" id="gender">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="phoneNo">Phone Number</label>
+                        <input type="number" name="phoneNumber" id="phoneNumber">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="department">Department</label>
+                        <input type="text" name="department" id="department">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address">
+                    </div>
+
+                    <button type="submit" id="register" class="register">Register</button>
+                </form>
+            </dialog>
         </main>
     </div>
     <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
     <script src="script/loadingScreen.js" defer></script>
     <script type="module" src="script/home.js" defer></script>
-    <script trpe="module" src="script/dashboard.js" defer></script>
+    <script type="module" src="script/dashboard.js" defer></script>
     <script type="module" src="script/calender.js" defer></script>
+
 </body>
 
 </html>

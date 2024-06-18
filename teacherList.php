@@ -130,11 +130,11 @@
                 </div>
 
                 <button type="button" value="edit" name="edit" id="edit_student" class="edit btn" <?php
-                if (!isset($_SESSION['admin'])) {
+                if (!(isset($_SESSION['role']) && $_SESSION['role'] == 'admin')) {
                     echo 'disabled';
                 } ?>>edit</button>
                 <button type="button" value="delete" name="delete" id="delete_student" class="deleteBtn btn" <?php
-                if (!isset($_SESSION['admin'])) {
+                if (!(isset($_SESSION['role']) && $_SESSION['role'] == 'admin')) {
                     echo 'disabled';
                 } ?>>delete</button>
             </div>

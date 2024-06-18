@@ -45,10 +45,9 @@
             </div>
 
             <button class="compose-notice-button" <?php
-            if (!isset($_SESSION['role'])) {
+            if (!(isset($_SESSION['role']) && $_SESSION['role'] == 'admin')) {
                 echo 'disabled';
-            } ?>><i
-                    class="fa-regular fa-pen-line"></i>Compose</button>
+            } ?>><i class="fa-regular fa-pen-line"></i>Compose</button>
 
             <dialog class="container">
                 <i class="fa-solid fa-x closePopUp"></i>
