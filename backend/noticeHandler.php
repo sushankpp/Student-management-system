@@ -1,6 +1,7 @@
 <?php
 include 'dbConnect.php';
 
+
 class NoticeHandler
 {
     private $db;

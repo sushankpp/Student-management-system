@@ -116,7 +116,7 @@
 
                 <div class="address-div">
                     <p class="address">address</p>
-                    <input type="text" class="value location" name="address" value="" disabled>
+                    <input type="text" class="value add" name="address" value="" disabled>
                 </div>
 
                 <div class="department-div">

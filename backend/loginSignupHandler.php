@@ -2,6 +2,11 @@
 include ('dbConnect.php');
 include ('../include/include_session.php');
 
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
+    header('location: ../index.php');
+}
+
+
 class UserHandler
 {
     private $connection;
@@ -58,6 +63,7 @@ class UserHandler
                     $_SESSION['last_name'] = $user['last_name'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['role'] = 'student';
+                    $_SESSION['id_'] = $user['ID'];
 
                     echo json_encode(['success' => true, 'message' => 'Login Successful']);
                     return;
@@ -81,6 +87,8 @@ class UserHandler
                     $_SESSION['first_name'] = $user['first_name'];
                     $_SESSION['last_name'] = $user['last_name'];
                     $_SESSION['role'] = 'admin';
+                    $_SESSION['id_'] = $user['adminId'];
+
 
                     echo json_encode(['success' => true, 'message' => 'Login Successful']);
                     return;

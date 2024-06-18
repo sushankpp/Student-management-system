@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const tableData = document.querySelector('tbody');
 
   if (!tableData) {
-    console.error('Table not found');
     return;
   }
 
@@ -158,7 +157,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Toggle dark mode for paragraphs and headings
     navItems.classList.add('navDark');
 
-    console.log(tr);
 
     // Apply dark mode styles to everything
     table.classList.add('dark-mode');

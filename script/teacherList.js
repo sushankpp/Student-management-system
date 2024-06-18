@@ -1,4 +1,4 @@
-console.log('teachers list loaded');
+
 
 import { showNotification } from './notification.js';
 
@@ -37,7 +37,6 @@ function refreshData() {
   formData.append('gender', selectedGender);
   formData.append('department', selectedDepartment);
   formData.append('action', 'showTeachers');
-  console.log(formData);
 
   fetch('backend/teacherListHandler.php', {
     method: 'POST',
@@ -45,9 +44,9 @@ function refreshData() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+    
       if (data.success) {
-        console.log(data);
+        
 
         let teachersTable = document.getElementById('teacher-table-body');
 
@@ -76,7 +75,7 @@ function refreshData() {
 }
 
 function loadOnce() {
-  console.log('loaded once');
+
   let formData = new FormData();
 
   formData.append('gender', '');
@@ -148,7 +147,7 @@ function showSidebar(row) {
       address: address,
     };
 
-    console.log(teacher);
+  
 
     header.classList.add('shrink');
     navBar.classList.add('shrink');
@@ -161,7 +160,7 @@ function showSidebar(row) {
     document.querySelector('.Uemail').value = teacher.email;
     document.querySelector('.sex').value = teacher.gender;
     document.querySelector('.division').value = teacher.department;
-    document.querySelector('.location').value = teacher.address;
+    document.querySelector('.add').value = teacher.address;
   });
 }
 
@@ -181,17 +180,17 @@ editBtn.addEventListener('click', (event) => {
 
     formInputs.forEach((input) => (input.disabled = false));
     document.getElementById('dont-edit-id').disabled = true;
-    console.log(inputToFocus);
+  
     inputToFocus.focus();
   } else {
     // Save functionality
-    console.log('Edited values:');
+
     let formData = new FormData();
     formInputs.forEach((input) => {
       formData.append(input.name, input.value);
     });
     formData.append('action', 'edit');
-    console.log(formData);
+
 
     fetch('backend/teacherListHandler.php', {
       method: 'POST',
@@ -229,7 +228,7 @@ deleteBtn.addEventListener('click', () => {
   });
   formData.append('action', 'delete');
 
-  console.log(formData);
+
 
   fetch('backend/teacherListHandler.php', {
     method: 'POST',

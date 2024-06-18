@@ -46,7 +46,6 @@ function sendNotice() {
   let titleValue = title.innerHTML;
   let BodyContentValue = BodyContent.innerHTML;
 
-  // console.log(titleValue, BodyContentValue);
 
   let formData = new FormData();
 
@@ -54,7 +53,7 @@ function sendNotice() {
   formData.append('body', BodyContentValue);
   formData.append('action', 'sendDataToDb');
 
-  console.log(formData);
+
 
   fetch('backend/noticeHandler.php', {
     method: 'POST',
@@ -63,7 +62,7 @@ function sendNotice() {
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
-        console.log(data);
+       
       }
     })
 
@@ -79,7 +78,7 @@ function getNotice() {
   formData.append('body', '');
   formData.append('action', 'getNotice');
 
-  console.log(formData);
+
 
   fetch('backend/noticeHandler.php', {
     method: 'POST',
@@ -88,7 +87,7 @@ function getNotice() {
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
-        console.log(data);
+
 
         data.notices.forEach((notice, index) => {
           let noticeBody = document.createElement('div');

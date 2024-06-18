@@ -1,4 +1,4 @@
-console.log('fee.js loaded');
+
 
 const semesterSelect = document.getElementById('Semester-select');
 const NextBtn = document.getElementById('NextBtn');
@@ -20,7 +20,7 @@ semesterSelect.addEventListener('change', updateData);
 function updateData() {
   const feeTable = document.getElementById('feeTable');
 
-  console.log(selectedValue);
+
 
   switch (selectedValue) {
     case 'BCA(4th)':

@@ -1,4 +1,4 @@
-
+import { showNotification } from './notification.js';
 
 const TableContainer = document.getElementById('recentlyAddedTable');
 const noticePreviewDiv = document.querySelectorAll('.notice-preview');
@@ -29,6 +29,8 @@ function loadData() {
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
+
+        console.log(data);
         totalNumber.innerHTML = data.total;
         maleCount.innerHTML = data.maleCount;
         femaleCount.innerHTML = data.femaleCount;
@@ -36,7 +38,7 @@ function loadData() {
         let RecentlyAddedTableBody = document.getElementById('resultBody');
         RecentlyAddedTableBody.innerHTML = '';
 
-        count = 0;
+        let count = 0;
         data.message.forEach((student) => {
           let row = document.createElement('tr');
 
@@ -289,5 +291,6 @@ function registerUser() {
 }
 
 registerButton.addEventListener('click', (e) => {
+  e.preventDefault();
   registerUser();
 });

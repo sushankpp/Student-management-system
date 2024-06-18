@@ -17,6 +17,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!--Includes-->
+    <?php include ('include/include_toasterNotification.php') ?>
+    <!--Include Ends-->
+
     <title>Dashboard</title>
 </head>
 

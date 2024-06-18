@@ -1,6 +1,8 @@
 <?php
 include 'dbConnect.php';
 
+
+
 class DataHandler
 {
     private $db;

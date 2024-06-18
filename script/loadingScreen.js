@@ -17,7 +17,7 @@ function toggleDarkMode() {
   const setTheme = theme.classList.contains('dark-mode') ? 'DARK' : 'LIGHT';
   localStorage.setItem('SetTheme', JSON.stringify(setTheme));
 
-  console.log(setTheme);
+
   if (setTheme === 'DARK') {
     const p = document.querySelectorAll('p');
     const heading = document.querySelectorAll('h1, h2, h3, h4, h5, h6');

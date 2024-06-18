@@ -1,4 +1,4 @@
-console.log('student loaded');
+
 
 import { showNotification } from './notification.js';
 
@@ -30,7 +30,7 @@ genderSelect.addEventListener('change', (event) => {
 // if the value of department is changed, refresh the data
 departmentSelect.addEventListener('change', (event) => {
   selectedDepartment = event.target.value;
-  // console.log(selectedDepartment);
+
 });
 
 // Calling the function to refresh the data
@@ -81,7 +81,7 @@ function refreshData() {
       // Check if the request was successful
       if (data.success === true) {
         let studentCount = 0;
-        // console.log(data);
+     
         // Get the student table body element
         let studentTableBody = document.getElementById('student-table-body');
 
@@ -141,12 +141,12 @@ function refreshData() {
 refreshData();
 
 function loadOnce() {
-  console.log('loaded once');
+ 
   let formData = new FormData();
   formData.append('gender', '');
   formData.append('department', '');
   formData.append('action', 'showStudents');
-  // console.log(formData);
+
 
   fetch('backend/studentListHandler.php', {
     method: 'POST',
@@ -168,8 +168,6 @@ function loadOnce() {
           // Create a new table row and fill it with the student's data
           let row = document.createElement('tr');
 
-          // Show all data except email on mobile (check for window width)
-          // if (window.innerWidth >= 750) {
           row.innerHTML = `
                 <td><input type="checkbox" class="attendanceCheckbox" id=${student.ID}></td>
                 <td>${student.ID}</td>
@@ -214,7 +212,8 @@ function showSidebar(row) {
       address: address,
     };
 
-    // console.log(student);
+    console.log(student);
+
 
     header.classList.add('shrink');
     navBar.classList.add('shrink');
@@ -227,9 +226,10 @@ function showSidebar(row) {
     document.querySelector('.Uemail').value = student.email;
     document.querySelector('.sex').value = student.gender;
     document.querySelector('.division').value = student.department;
-    document.querySelector('.location').value = student.address;
+    document.querySelector('.add').value = student.address;
   });
 }
+
 
 let editBtn = document.getElementById('edit_student');
 let deleteBtn = document.getElementById('delete_student');
@@ -247,17 +247,17 @@ editBtn.addEventListener('click', (event) => {
 
     formInputs.forEach((input) => (input.disabled = false));
     document.getElementById('dont-edit-id').disabled = true;
-    // console.log(inputToFocus);
+    
     inputToFocus.focus();
   } else {
     // Save functionality
-    console.log('Edited values:');
+    
     let formData = new FormData();
     formInputs.forEach((input) => {
       formData.append(input.name, input.value);
     });
     formData.append('action', 'edit');
-    // console.log(formData);
+   
 
     fetch('backend/studentListHandler.php', {
       method: 'POST',
@@ -269,7 +269,7 @@ editBtn.addEventListener('click', (event) => {
           showNotification('success', 'toast-top-right', data.message);
           refreshData();
         } else {
-          // console.log(data.message);
+        
           showNotification('error', 'toast-top-right', data.message);
         }
       })
@@ -296,7 +296,7 @@ deleteBtn.addEventListener('click', () => {
   });
   formData.append('action', 'delete');
 
-  // console.log(formData);
+
 
   fetch('backend/studentListHandler.php', {
     method: 'POST',
@@ -308,7 +308,7 @@ deleteBtn.addEventListener('click', () => {
         showNotification('success', 'toast-top-right', data.message);
         refreshData();
       } else {
-        console.log(data.message);
+
       }
     })
     .catch((error) => {
@@ -413,10 +413,10 @@ attendanceCheckbox.addEventListener('change', refreshData);
 checkAttendanceSelection();
 
 function increaseAttendance(ids) {
-  console.log('ids:', ids);
+
   let formData = new FormData();
 
-  console.log(ids);
+ 
   formData.append('action', 'increaseAttendance');
   formData.append('checkedIds', ids);
 
@@ -426,7 +426,7 @@ function increaseAttendance(ids) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+   
     })
     .catch((error) => {
       console.log(error);

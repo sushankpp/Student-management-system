@@ -156,7 +156,7 @@ include 'include/include_HTMLheader.php';
             </div>
             <section class="saveOrLogout">
                 <button class="btnn logoutBtn" id="logoutuser">LogOut</button>
-                <button class="btnn EditBtn">Edit</button>
+                <button class="btnn EditBtn" value="edit">Edit</button>
             </section>
         </div>
     </main>
