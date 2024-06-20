@@ -2,9 +2,9 @@
 include ('dbConnect.php');
 include ('../include/include_session.php');
 
-if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
-    header('location: ../index.php');
-}
+// if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
+//     header('location: ../index.php');
+// }
 
 
 class UserHandler

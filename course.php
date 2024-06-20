@@ -64,9 +64,9 @@
                         <th>SN</th>
                         <th>Book Name</th>
                         <th>Semester</th>
-                        <th>Author</th>
                         <th>Department</th>
                         <th>Publication</th>
+                        <th>TeacherID</th>
                 </thead>
 
                 <tbody>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="internals/images/st-lawrence-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <!-- <link rel="stylesheet" href="style/loadingScreen.css"> -->
+    <link rel="stylesheet" href="style/loadingScreen.css">
     <link rel="stylesheet" href="style/studentList_sidebar.css">
     <link rel="stylesheet" href="style/student_list.css">
     <link rel="stylesheet" href="style/dashboard.css">

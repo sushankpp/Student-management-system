@@ -5,14 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const courses = [
+  let courses = []
+
+  console.log('Fetching courses');
+
+  let formData = new FormData();
+  formData.append('action', 'get_courses');
+  fetch('backend/courseHandler.php', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    courses = data;
+    renderTable(courses);
+  }
+  )
+  .catch(error => console.error('Error:', error));
+
+  /* const courses = [
     {
       id: 1,
       name: 'Operating System',
       author: `Bhupendra Singh Saud, Deepak Bhatt`,
       semester: 'fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
-      department: 'CSIT | BCA',
+      department: 'BCA',
+      teacherID: 1
     },
     {
       id: 2,
@@ -20,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       author: 'Dr. P. Kandasamy, Dr. K. Thilagavathy, Dr. K. Gunavathi',
       semester: ' Fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
-      department: ' BCA',
+      department: 'BCA',
+      teacherID: 2
     },
 
     {
@@ -30,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       semester: 'fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
       department: 'CSIT ',
+      teacherID: 3
     },
 
     {
@@ -38,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
       author: 'Bhupendra singh raud, Indra chaudhary',
       semester: 'fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
-      department: 'CSIT | BCA',
+      department: 'CSIT',
+      teacherID: 4
     },
     {
       id: 5,
@@ -47,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       semester: 'fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
       department: 'CSIT ',
+      teacherID: 5
     },
 
     {
@@ -56,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       semester: 'fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
       department: 'BCA ',
+      teacherID: 6
     },
     {
       id: 7,
@@ -64,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       semester: 'fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
       department: 'BCA ',
+      teacherID: 7
     },
     {
       id: 8,
@@ -72,8 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
       semester: 'Fourth',
       publication: 'KEC PUBLICATION AND DISTRIBUTION PVT. LTD.',
       department: 'CSIT',
+      teacherID: 8
     },
-  ];
+  ]; */
 
   // Render table initially
   renderTable(courses);
@@ -93,6 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTable(filteredCourses);
   });
 
+  console.log(courses);
+
   function renderTable(data) {
     tableData.innerHTML = data
       .map((course) => {
@@ -101,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 750) {
           return `
             <tr style='height:50px'>
-              <td> ${course.id}</td>
-              <td> ${course.name}</td>
+              <td> ${course.Id}</td>
+              <td> ${course.book_name}</td>
               <td> ${course.semester}</td>
               <td style="display: none;"> ${authors}</td>
               <td> ${course.department}</td>
@@ -112,12 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           return `
             <tr style='height:50px'>
-              <td> ${course.id}</td>
-              <td> ${course.name}</td>
+              <td> ${course.Id}</td>
+              <td> ${course.book_name}</td>
               <td> ${course.semester}</td>
-              <td> ${authors}</td>
               <td> ${course.department}</td>
               <td> ${course.publication}</td>
+              <td> ${course.teacherID}</td>
             </tr>
           `;
         }

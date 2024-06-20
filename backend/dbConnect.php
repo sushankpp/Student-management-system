@@ -10,7 +10,7 @@ function db_connect()
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "sms";
+    $dbname = "sm";
 
     // Create connection
     $connection = new mysqli($servername, $username, $password, $dbname);

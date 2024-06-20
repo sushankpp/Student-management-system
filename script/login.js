@@ -1,5 +1,3 @@
-
-
 import { showNotification } from './notification.js';
 
 document.getElementById('loginForm').addEventListener('submit', (event) => {

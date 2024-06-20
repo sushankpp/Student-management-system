@@ -34,10 +34,10 @@ include_once ('login.php');
         </div>
         <div class="nav-bar">
             <ul class="navbar">
-                <li><a href="https://www.stlawrence.edu.np/plus/academics" target="_blank">Programs</a></li>
-                <li><a href="https://www.stlawrence.edu.np/family/team" target="_blank">Our staff</a></li>
-                <li><a href="https://www.stlawrence.edu.np/gallery/image-gallery" target="_blank">Gallery</a></li>
-                <li><a href="https://www.stlawrence.edu.np/plus/academics" target="_blank">Contact us</a></li>
+                <li><a href="" target="_blank">Programs</a></li>
+                <li><a href="" target="_blank">Our staff</a></li>
+                <li><a href="" target="_blank">Gallery</a></li>
+                <li><a href="" target="_blank">Contact us</a></li>
             </ul>
         </div>
         <div class="join">
